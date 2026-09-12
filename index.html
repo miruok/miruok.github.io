@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mir Mohammad Yousuf — Quantum Software Engineering Researcher</title>
+<meta name="description" content="Mir Mohammad Yousuf: Quantum Software Engineering researcher and educator. Reliable quantum computing, noise-aware testing, and quantum machine learning.">
+<meta name="author" content="Mir Mohammad Yousuf">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23123F45'/><text x='16' y='22' font-family='Georgia,serif' font-size='15' fill='white' text-anchor='middle'>MY</text></svg>">
+
+<!-- Structured data: helps Google Scholar, search, and social tools identify the profile -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Mir Mohammad Yousuf",
+  "jobTitle":"Quantum Software Engineering Researcher and Educator",
+  "affiliation":{"@type":"CollegeOrUniversity","name":"National Institute of Technology Srinagar"},
+  "email":"mailto:miryousuf.uok@gmail.com",
+  "address":{"@type":"PostalAddress","addressLocality":"Srinagar","addressRegion":"Jammu and Kashmir","addressCountry":"India"},
+  "sameAs":[
+    "https://scholar.google.com/citations?hl=en&user=keHp6E8AAAAJ",
+    "https://orcid.org/0009-0001-7453-3358",
+    "https://www.researchgate.net/profile/Mir-Yousuf",
+    "https://www.linkedin.com/in/mir-yousuf"
+  ],
+  "knowsAbout":["Quantum Software Engineering","Quantum Software Testing","Quantum Machine Learning","Empirical Software Engineering","NISQ Computing","Software Quality"]
+}
+</script>
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Mir Mohammad Yousuf — Quantum Software Engineering Researcher">
+<meta property="og:description" content="Reliable quantum computing, noise-aware testing, and quantum machine learning.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#FBFCFC;
+    --paper-tint:#F1F5F5;
+    --ink:#1A2026;
+    --slate:#233F5B;
+    --teal:#1F5D66;
+    --teal-deep:#123F45;
+    --muted:#59636E;
+    --hair:#DDE3E4;
+    --tint:#E8F1F0;
+    --tint-line:#CFE0DE;
+    --amber:#9A6B10;
+
+    --serif:"Spectral", Georgia, "Times New Roman", serif;
+    --sans:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --measure:68ch;
+    --nav-h:60px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16.5px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:2px}
+  h1,h2,h3{font-family:var(--serif);color:var(--slate);font-weight:600;line-height:1.15}
+  section{scroll-margin-top:calc(var(--nav-h) + 12px)}
+
+  .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    height:var(--nav-h);
+    background:rgba(251,252,252,.9);
+    backdrop-filter:saturate(1.2) blur(8px);
+    border-bottom:1px solid var(--hair);
+  }
+  .nav .wrap{display:flex;align-items:center;height:100%;gap:18px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;color:var(--slate);font-size:1.02rem;white-space:nowrap}
+  .brand .mono{
+    display:inline-grid;place-items:center;
+    width:30px;height:30px;border-radius:5px;
+    background:var(--teal-deep);color:#fff;
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.5px;
+  }
+  .nav-links{margin-left:auto;display:flex;gap:20px;align-items:center}
+  .nav-links a{
+    font-size:.82rem;color:var(--muted);font-weight:500;
+    padding:4px 0;border-bottom:2px solid transparent;
+  }
+  .nav-links a:hover{color:var(--teal);text-decoration:none}
+  .nav-links a.active{color:var(--slate);border-bottom-color:var(--teal)}
+  .nav-toggle{display:none;margin-left:auto;background:none;border:1px solid var(--hair);border-radius:6px;padding:7px 10px;color:var(--slate);cursor:pointer}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--hair)}
+  .hero .wrap{padding:60px 28px 52px;position:relative;z-index:2}
+  .hero-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,3.7rem);margin:0 0 2px;letter-spacing:-.01em}
+  .hero .role{font-family:var(--sans);font-weight:600;color:var(--teal);font-size:1.12rem;margin:6px 0 4px}
+  .hero .tag{color:var(--muted);font-size:.98rem;margin:0 0 16px}
+  .hero .tag b{color:var(--slate);font-weight:600}
+  .hero .lede{max-width:60ch;color:var(--ink);font-size:1.05rem;margin:0 0 22px}
+
+  .links{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px}
+  .links a{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.85rem;font-weight:500;color:var(--slate);
+    border:1px solid var(--tint-line);background:var(--paper);
+    padding:7px 12px;border-radius:7px;
+  }
+  .links a:hover{background:var(--tint);border-color:var(--teal);color:var(--teal-deep);text-decoration:none}
+  .links svg{width:15px;height:15px;flex:none}
+
+  .signal{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.83rem;color:var(--muted);align-items:baseline}
+  .signal b{color:var(--slate);font-family:var(--mono);font-weight:500}
+
+  /* portrait / monogram */
+  .portrait{
+    width:172px;height:172px;border-radius:12px;
+    background:var(--teal-deep);color:#fff;
+    display:grid;place-items:center;
+    font-family:var(--serif);font-size:3.6rem;font-weight:500;letter-spacing:1px;
+    box-shadow:0 1px 0 var(--hair);
+    object-fit:cover;overflow:hidden;
+  }
+
+  /* correctness-envelope motif */
+  .motif{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5}
+
+  /* ---------- SECTIONS ---------- */
+  .band{padding:52px 0;border-bottom:1px solid var(--hair)}
+  .band:nth-of-type(even){background:linear-gradient(var(--paper-tint),var(--paper-tint))}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin:0 0 26px}
+  .sec-head h2{font-size:1.6rem;margin:0}
+  .sec-head .idx{font-family:var(--mono);font-size:.78rem;color:var(--teal);padding-top:4px}
+  .sec-head::after{content:"";flex:1;height:1px;background:var(--hair);align-self:center}
+
+  p.body{max-width:var(--measure)}
+  .lead-sub{color:var(--muted);max-width:var(--measure);margin-top:-14px;margin-bottom:26px}
+
+  /* interests */
+  .interests{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px;max-width:920px}
+  .interests li{list-style:none;padding-left:20px;position:relative;color:var(--ink)}
+  .interests li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border:1.5px solid var(--teal);border-radius:50%}
+  ul.interests{padding:0;margin:0}
+
+  /* publications */
+  .pub-group + .pub-group{margin-top:30px}
+  .pub-group h3{font-size:1.02rem;color:var(--teal-deep);margin:0 0 14px;font-family:var(--sans);font-weight:600}
+  ol.pubs{margin:0;padding:0;counter-reset:pub;list-style:none}
+  ol.pubs li{
+    position:relative;padding:14px 0 14px 40px;border-top:1px solid var(--hair);
+    max-width:900px;
+  }
+  ol.pubs li:first-child{border-top:none}
+  ol.pubs li::before{
+    counter-increment:pub;content:counter(pub);
+    position:absolute;left:0;top:15px;
+    font-family:var(--mono);font-size:.78rem;color:var(--muted);
+    width:26px;text-align:right;
+  }
+  .pub-title{color:var(--ink);font-weight:500}
+  .pub-venue{color:var(--muted);font-style:italic}
+  .pub-meta{display:block;margin-top:3px;font-size:.86rem;color:var(--muted)}
+  .me{color:var(--slate);font-weight:600}
+  .badge{
+    display:inline-block;font-family:var(--mono);font-size:.68rem;font-weight:500;
+    padding:2px 7px;border-radius:4px;vertical-align:middle;margin-left:4px;
+    letter-spacing:.02em;white-space:nowrap;
+  }
+  .badge.acc{background:var(--tint);color:var(--teal-deep);border:1px solid var(--tint-line)}
+  .badge.rev{background:#F6EFDD;color:var(--amber);border:1px solid #E7D6AD}
+
+  /* contributions */
+  .contribs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);border:1px solid var(--hair)}
+  .contribs > div{background:var(--paper);padding:22px 24px}
+  .contribs h3{font-size:1.02rem;margin:0 0 8px;font-family:var(--sans);color:var(--teal-deep);font-weight:600}
+  .contribs p{margin:0;font-size:.93rem;color:var(--muted)}
+  .band:nth-of-type(even) .contribs > div{background:var(--paper-tint)}
+
+  /* timeline (education + experience) */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .cols h3.colhead{font-size:1.15rem;margin:0 0 18px}
+  .tl{border-left:2px solid var(--tint-line);padding-left:22px;margin-left:4px}
+  .tl .item{position:relative;padding-bottom:22px}
+  .tl .item:last-child{padding-bottom:0}
+  .tl .item::before{content:"";position:absolute;left:-27px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px var(--paper)}
+  .band:nth-of-type(even) .tl .item::before{box-shadow:0 0 0 3px var(--paper-tint)}
+  .tl .role{font-weight:600;color:var(--slate)}
+  .tl .org{color:var(--teal-deep)}
+  .tl .when{font-family:var(--mono);font-size:.76rem;color:var(--muted);display:block;margin:1px 0 5px}
+  .tl .desc{font-size:.9rem;color:var(--muted);margin:0}
+  .tl .desc b{color:var(--ink);font-weight:500}
+
+  /* generic detail lists */
+  .stack{display:grid;gap:22px}
+  .block h3{font-size:1.1rem;margin:0 0 12px}
+  ul.clean{margin:0;padding:0;list-style:none;max-width:var(--measure)}
+  ul.clean li{padding:7px 0 7px 20px;position:relative;border-top:1px solid var(--hair);font-size:.95rem}
+  ul.clean li:first-child{border-top:none}
+  ul.clean li::before{content:"";position:absolute;left:2px;top:1.05em;width:6px;height:6px;background:var(--teal);border-radius:1px}
+  ul.clean li b{color:var(--slate);font-weight:600}
+
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+
+  /* skills */
+  .skill-row{display:grid;grid-template-columns:210px 1fr;gap:18px;padding:12px 0;border-top:1px solid var(--hair);max-width:920px}
+  .skill-row:first-child{border-top:none}
+  .skill-row .k{font-weight:600;color:var(--slate);font-size:.92rem}
+  .skill-row .v{color:var(--muted);font-size:.92rem}
+
+  /* certifications */
+  .cert h3{font-size:.96rem;color:var(--teal-deep);font-family:var(--sans);font-weight:600;margin:0 0 8px}
+  .cert ul{margin:0 0 4px;padding-left:18px}
+  .cert li{font-size:.88rem;color:var(--muted);margin-bottom:5px}
+  .cert code{font-family:var(--mono);font-size:.8em;color:var(--ink)}
+
+  /* collapsible earlier work */
+  details.earlier{border:1px solid var(--hair);border-radius:10px;background:var(--paper);max-width:940px}
+  .band:nth-of-type(even) details.earlier{background:var(--paper-tint)}
+  details.earlier > summary{
+    cursor:pointer;list-style:none;padding:18px 22px;
+    display:flex;align-items:center;gap:12px;
+    font-family:var(--serif);color:var(--slate);font-size:1.08rem;font-weight:600;
+  }
+  details.earlier > summary::-webkit-details-marker{display:none}
+  details.earlier > summary .chev{margin-left:auto;transition:transform .2s;color:var(--teal);font-family:var(--mono);font-size:.9rem}
+  details.earlier[open] > summary .chev{transform:rotate(90deg)}
+  details.earlier .inner{padding:2px 22px 22px}
+  details.earlier .count{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-weight:400}
+
+  /* footer */
+  footer{padding:46px 0;background:var(--teal-deep);color:#D9E6E5}
+  footer a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:18px 40px;align-items:baseline;justify-content:space-between}
+  footer .note{font-size:.82rem;color:#9FBAB8;max-width:52ch}
+  footer .flinks{display:flex;flex-wrap:wrap;gap:16px;font-size:.9rem}
+
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+  /* primary action + focus pills */
+  .links a.primary{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep)}
+  .links a.primary:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+  .links a.primary svg{stroke:#fff}
+  .focus{display:flex;flex-wrap:wrap;gap:8px}
+  .focus span{font-size:.8rem;color:var(--teal-deep);background:var(--tint);border:1px solid var(--tint-line);padding:5px 12px;border-radius:20px}
+  .badge.jrnl{background:#EAF0F6;color:var(--slate);border:1px solid #CBD9E6}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:start}
+  .contact-intro h3{font-size:1.2rem;margin:0 0 12px}
+  .contact-intro > p{color:var(--muted);max-width:46ch;margin:0}
+  .contact-direct{display:grid;gap:11px;margin-top:24px}
+  .contact-direct a{display:inline-flex;align-items:center;gap:10px;color:var(--slate);font-weight:500;font-size:.94rem;width:fit-content}
+  .contact-direct a:hover{color:var(--teal);text-decoration:none}
+  .contact-direct svg{width:16px;height:16px;color:var(--teal);flex:none}
+  .form-frame{border:1px solid var(--hair);border-radius:12px;overflow:hidden;background:var(--paper)}
+  .form-frame iframe{width:100%;min-height:820px;border:0;display:block}
+  .form-fallback{padding:28px}
+  .form-fallback h4{margin:0 0 10px;font-family:var(--serif);font-size:1.05rem;color:var(--slate);font-weight:600}
+  .form-fallback p{margin:0 0 10px;color:var(--muted);font-size:.9rem}
+  .form-fallback ol{margin:0;padding-left:20px;color:var(--muted);font-size:.88rem}
+  .form-fallback li{margin-bottom:7px}
+  .form-fallback code{font-family:var(--mono);font-size:.82em;color:var(--teal-deep);background:var(--tint);padding:1px 5px;border-radius:3px}
+
+  /* print to PDF */
+  @media print{
+    .nav,.nav-toggle,.motif,.links,.focus,.form-frame,footer{display:none !important}
+    body{font-size:10.5px;color:#000;background:#fff}
+    .band,.hero{padding:12px 0;border:none;background:#fff !important}
+    .sec-head::after{background:#ccc}
+    a{color:#000;text-decoration:none}
+    details.earlier{border:none;background:#fff}
+    details.earlier .chev{display:none}
+    details.earlier > summary{padding:6px 0}
+    details.earlier[open] .inner,details.earlier .inner{padding:0}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .nav-links{
+      position:absolute;top:var(--nav-h);left:0;right:0;
+      flex-direction:column;align-items:flex-start;gap:0;
+      background:var(--paper);border-bottom:1px solid var(--hair);
+      padding:6px 28px 14px;display:none;
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{width:100%;padding:9px 0;border-bottom:1px solid var(--hair)}
+    .nav-links a.active{border-bottom-color:var(--hair);color:var(--teal)}
+    .nav-toggle{display:block}
+    .hero-grid{grid-template-columns:1fr;gap:26px}
+    .portrait{order:-1;width:120px;height:120px;font-size:2.6rem}
+    .interests,.contribs,.cols,.three,.two,.contact-grid{grid-template-columns:1fr}
+    .cols{gap:34px}
+    .skill-row{grid-template-columns:1fr;gap:2px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important;animation:none !important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" aria-label="Section navigation">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mono">MY</span>Mir M. Yousuf</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <div class="nav-links" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#contributions">Contributions</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="top">
+  <!-- correctness-envelope motif: a measured signal held within program-specific bounds -->
+  <svg class="motif" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="env" x1="0" x2="1">
+        <stop offset="0" stop-color="#1F5D66" stop-opacity="0"/>
+        <stop offset="1" stop-color="#1F5D66" stop-opacity=".16"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,150 L1200,90 L1200,300 L0,300 Z" fill="url(#env)"/>
+    <path d="M0,150 L1200,90" stroke="#1F5D66" stroke-opacity=".28" stroke-width="1.5" fill="none"/>
+    <path d="M0,300 L1200,300" stroke="#1F5D66" stroke-opacity=".18" stroke-width="1.5" fill="none"/>
+    <path d="M0,238 L60,210 L120,255 L180,224 L240,262 L300,231 L360,248 L420,214 L480,240 L540,208
+             L600,236 L660,202 L720,229 L780,196 L840,224 L900,190 L960,214 L1020,182 L1080,206 L1140,176 L1200,196"
+          fill="none" stroke="#123F45" stroke-opacity=".5" stroke-width="2" stroke-linejoin="round"/>
+  </svg>
+
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Mir Mohammad Yousuf</h1>
+        <div class="role">Quantum Software Engineering Researcher &amp; Educator</div>
+        <p class="tag"><b>Reliable quantum computing</b> · Noise-aware testing · Quantum machine learning</p>
+        <p class="lede">
+          I work on making quantum software reliable: interpretable defect analysis, self-calibrating
+          noise-aware testing evaluated on IBM Quantum hardware, and learning-based error mitigation for
+          quantum machine learning. PhD scholar at NIT Srinagar with over four years of university teaching.
+        </p>
+
+        <div class="links">
+          <a class="primary" href="Mir_Yousuf_CV.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>Download CV</a>
+          <a href="mailto:miryousuf.uok@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=keHp6E8AAAAJ" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z"/></svg>Scholar</a>
+          <a href="https://orcid.org/0009-0001-7453-3358" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" opacity=".18"/><path d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zM8.3 17.4H6.7V8.9h1.6v8.5zM7.5 7.8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM17.6 13.2c0 2.6-1.7 4.2-4.2 4.2h-2.7V8.9h2.7c2.5 0 4.2 1.7 4.2 4.3zm-1.7 0c0-1.9-1.1-2.8-2.7-2.8h-1v5.6h1c1.4 0 2.7-.8 2.7-2.8z"/></svg>ORCID</a>
+          <a href="https://www.researchgate.net/profile/Mir-Yousuf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="3" opacity=".15"/><path d="M12.7 7.6c1.9 0 3 .9 3 2.6 0 1.3-.8 2.2-2 2.5l2.4 3.7h-1.8l-2.1-3.4h-1.1v3.4H9.5V7.6h3.2zm-1.6 1.4v2.6h1.4c1 0 1.5-.5 1.5-1.3 0-.9-.5-1.3-1.5-1.3h-1.4z"/></svg>ResearchGate</a>
+          <a href="https://www.linkedin.com/in/mir-yousuf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="3" opacity=".15"/><path d="M8 10v7H5.5v-7H8zM6.7 6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM18.5 17H16v-3.7c0-1-.4-1.6-1.2-1.6-.7 0-1 .5-1.2 1-.1.2-.1.5-.1.7V17h-2.5v-7h2.5v1c.3-.5 1-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.4V17z"/></svg>LinkedIn</a>
+          <!-- Replace USERNAME with your GitHub handle -->
+          <a href="https://github.com/USERNAME" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.4 4.6-4.6 4.9.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>GitHub</a>
+        </div>
+
+        <div class="focus" aria-label="Focus areas">
+          <span>Reliable quantum computing</span>
+          <span>Noise-aware testing</span>
+          <span>Empirical software engineering</span>
+          <span>Quantum machine learning</span>
+        </div>
+      </div>
+
+      <!-- Add a photo at assets/photo.jpg to replace the monogram automatically -->
+      <img class="portrait" src="assets/photo.jpg" alt="Mir Mohammad Yousuf"
+           onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'portrait',textContent:'MY'}))">
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="band" id="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">01</span><h2>About</h2></div>
+    <p class="body">
+      Researcher and educator combining doctoral research in Quantum Software Engineering at the National Institute of
+      Technology Srinagar with over four years of university teaching as an Assistant Professor at the University of Kashmir
+      and Lovely Professional University. My research focuses on reliable quantum computing, interpretable defect analysis,
+      and noise-aware testing, with recent first-author publications in <i>Automated Software Engineering</i> and
+      <i>Neurocomputing</i>. Contributions span large-scale empirical studies and self-calibrating testing evaluated on IBM
+      Quantum hardware, alongside co-authored work on adaptive error mitigation for quantum machine learning and quantum
+      reinforcement learning.
+    </p>
+    <p class="body" style="margin-top:16px">
+      My teaching and mentorship span undergraduate and postgraduate instruction in software engineering, programming, data
+      structures, algorithms, computer networks, and research methodology. I have guided student research projects and theses,
+      contributed to curriculum development, and mentored student teams, and I continue to support coursework and laboratory
+      instruction at NIT Srinagar. I bring experimental design, statistical analysis, IBM Qiskit, and industry software
+      quality-assurance experience to research, practical instruction, and student supervision.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== RESEARCH INTERESTS ===================== -->
+<section class="band" id="research">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">02</span><h2>Research interests</h2></div>
+    <ul class="interests">
+      <li>Reliable quantum computing, Quantum Software Engineering, noise-aware testing and verification.</li>
+      <li>Quantum machine learning: robustness, reproducibility, and testing of hybrid quantum-classical workflows.</li>
+      <li>Empirical evaluation of NISQ software: noise sensitivity, backend-dependent behaviour, and software quality.</li>
+      <li>AI/ML for software engineering and software quality: interpretable defect analytics, repository mining, and maintenance.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== PUBLICATIONS ===================== -->
+<section class="band" id="publications">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">03</span><h2>Selected publications</h2></div>
+    <p class="lead-sub">Recent quantum software engineering work. Earlier publications are listed at the foot of the page.</p>
+
+    <div class="pub-group">
+      <h3>Published and accepted</h3>
+      <ol class="pubs">
+        <li>
+          <span class="me">M. M. Yousuf</span> and S. A. Sofi, "Bug Classification in Quantum Software: A Rule-Based Framework and Its Evaluation." <span class="badge jrnl">Journal</span>
+          <span class="pub-meta"><span class="pub-venue">Automated Software Engineering</span>, Springer, vol. 33, no. 1, art. 39, 2026.</span>
+        </li>
+        <li>
+          <span class="me">M. M. Yousuf</span> and S. A. Sofi, "A Systematic Exploration of Quantum Software Engineering in the NISQ Era: Methods, Lifecycle Practices, and a Taxonomy of Challenges." <span class="badge jrnl">Journal</span>
+          <span class="pub-meta"><span class="pub-venue">Neurocomputing</span>, Elsevier, art. 132809, 2026.</span>
+        </li>
+        <li>
+          <span class="me">M. M. Yousuf</span>, "Cross-Ecosystem Bug Classification in Quantum Software." <span class="badge acc">Accepted</span>
+          <span class="pub-meta"><span class="pub-venue">International Conference on Communication and Computational Technologies (ICCMC-183)</span>.</span>
+        </li>
+        <li>
+          B. Majid, S. A. Sofi, and <span class="me">M. M. Yousuf</span>, "APGEM: Adaptive Policy-Guided Error Mitigation for Quantum Reinforcement Learning on a Real-World CVRP Case Study." <span class="badge acc">Accepted</span>
+          <span class="pub-meta"><span class="pub-venue">2026 6th International Multi Conference on Artificial Intelligence Technology (MCAIT)</span>.</span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="pub-group">
+      <h3>Under review and submitted</h3>
+      <ol class="pubs">
+        <li>
+          <span class="me">M. M. Yousuf</span> and S. A. Sofi, "Characterizing Bugs and Quality Attributes in Quantum Software: A Large-Scale Empirical Study." <span class="badge rev">Under review</span>
+          <span class="pub-meta">arXiv:<a href="https://arxiv.org/abs/2512.24656" target="_blank" rel="noopener">2512.24656</a>, 2025. <span class="pub-venue">Quantum Information Processing</span>.</span>
+        </li>
+        <li>
+          <span class="me">M. M. Yousuf</span> and S. A. Sofi, "Noise-Aware Testing for NISQ Quantum Software: A Framework and Empirical Characterization of Testing Boundaries." <span class="badge rev">Under review</span>
+          <span class="pub-meta"><span class="pub-venue">ACM Transactions on Software Engineering and Methodology (TOSEM)</span>.</span>
+        </li>
+        <li>
+          <span class="me">M. M. Yousuf</span> and S. A. Sofi, "Noise-Awareness in Quantum Software Testing: An Empirical Landscape Analysis." <span class="badge rev">Under review</span>
+          <span class="pub-meta"><span class="pub-venue">Automated Software Engineering</span>.</span>
+        </li>
+        <li>
+          B. Majid, S. A. Sofi, and <span class="me">M. M. Yousuf</span>, "Adaptive Policy-Guided Error Mitigation for Noise-Resilient Quantum Reinforcement Learning on the Capacitated Vehicle Routing Problem." <span class="badge rev">Submitted</span>
+          <span class="pub-meta"><span class="pub-venue">Cities</span>.</span>
+        </li>
+        <li>
+          B. Majid, S. A. Sofi, and <span class="me">M. M. Yousuf</span>, "Adaptive Policy-Guided Error Mitigation (APGEM): A Unified Learning-Based Framework for Noise Resilience in Quantum Machine Learning." <span class="badge rev">Submitted</span>
+          <span class="pub-meta"><span class="pub-venue">Engineering Applications of Artificial Intelligence</span>.</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTRIBUTIONS ===================== -->
+<section class="band" id="contributions">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">04</span><h2>Research contributions</h2></div>
+    <div class="contribs">
+      <div>
+        <h3>Interpretable quantum-software bug classification</h3>
+        <p>A rule-based framework for classifying quantum-software defects into interpretable categories. Evaluation against manually annotated cases showed strong agreement with human judgment and advantages over standard machine-learning baselines on difficult fine-grained categories.</p>
+      </div>
+      <div>
+        <h3>QSE methods and NISQ challenges</h3>
+        <p>A synthesis of methods and lifecycle practices across a fragmented research field, organized into a structured taxonomy of NISQ-era challenges around the engineering of quantum software.</p>
+      </div>
+      <div>
+        <h3>Longitudinal quantum-software quality</h3>
+        <p>A large-scale study of verified bug reports from open-source quantum repositories, characterizing bugs and quality attributes over time and extending the work from defect classification to longitudinal quality analysis.</p>
+      </div>
+      <div>
+        <h3>Self-calibrating noise-aware testing</h3>
+        <p>A methodology that replaces fixed correctness thresholds with program- and backend-specific correctness envelopes derived through self-baseline calibration, evaluated across noise regimes, hardware snapshots, and a live IBM Quantum system.</p>
+      </div>
+      <div>
+        <h3>Cross-ecosystem bug classification</h3>
+        <p>An extension of Qiskit-focused defect classification across quantum-software ecosystems, examining the transferability of bug categories beyond a single ecosystem.</p>
+      </div>
+      <div>
+        <h3>Reliable quantum ML and RL</h3>
+        <p>Co-authored research on Adaptive Policy-Guided Error Mitigation (APGEM), a learning-based approach to noise resilience in QML, applied to quantum reinforcement learning for the Capacitated Vehicle Routing Problem with a real-world case study.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EDUCATION + EXPERIENCE ===================== -->
+<section class="band" id="experience">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">05</span><h2>Education &amp; experience</h2></div>
+
+    <div class="cols">
+      <div>
+        <h3 class="colhead">Education</h3>
+        <div class="tl">
+          <div class="item">
+            <span class="role">Ph.D. in Information Technology</span>
+            <span class="org">National Institute of Technology Srinagar</span>
+            <span class="when">Oct 2022 – Present</span>
+            <p class="desc"><b>Quantum Software Engineering.</b> Thesis: <i>Quantum Software Engineering: Bridging Theory and Practice</i>. Supervisor: Dr. Shabir Ahmad Sofi. Minimum requirements completed for thesis submission.</p>
+          </div>
+          <div class="item">
+            <span class="role">M.Tech. in Computer Science and Technology</span>
+            <span class="org">Central University of Punjab, Bathinda</span>
+            <span class="when">2016 – 2018</span>
+            <p class="desc"><b>Distinction.</b> Thesis: <i>Analysis of the Change of Bugginess and Adaptiveness of Python Software Systems</i>.</p>
+          </div>
+          <div class="item">
+            <span class="role">B.Tech. in Computer Science and Engineering</span>
+            <span class="org">University of Kashmir, Srinagar</span>
+            <span class="when">2011 – 2015</span>
+            <p class="desc"><b>Distinction.</b> Ranked fourth among the university's CSE students.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="colhead">Academic &amp; research</h3>
+        <div class="tl">
+          <div class="item">
+            <span class="role">Research Fellow &amp; Teaching Assistant</span>
+            <span class="org">Dept. of IT, NIT Srinagar</span>
+            <span class="when">Oct 2022 – Present</span>
+            <p class="desc">Interpretable bug classification evaluated on 12,910 issues from 36 Qiskit repositories and 4,984 annotated cases; cross-ecosystem classification and a longitudinal analysis of 32,296 verified reports from 123 repositories; a self-calibrating noise-aware testing framework evaluated on IBM Quantum hardware.</p>
+          </div>
+          <div class="item">
+            <span class="role">Assistant Professor</span>
+            <span class="org">University of Kashmir</span>
+            <span class="when">Jun 2021 – Oct 2022</span>
+            <p class="desc">Taught programming, algorithms, Python, software engineering, data structures, and research methodology; contributed to curriculum development and student mentoring.</p>
+          </div>
+          <div class="item">
+            <span class="role">Assistant Professor</span>
+            <span class="org">Lovely Professional University</span>
+            <span class="when">Jul 2018 – May 2021</span>
+            <p class="desc">Taught software engineering, computer networks, C and Python programming, data structures, and research methods; guided student research projects and theses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px">
+      <h3 class="colhead">Industry &amp; software engineering</h3>
+      <div class="three">
+        <div class="tl">
+          <div class="item">
+            <span class="role">Automation Engineer</span>
+            <span class="org">Central University of Punjab</span>
+            <span class="when">Dec 2017 – May 2018</span>
+            <p class="desc">Automated student-management and result modules; PHP/MySQL components and black-box QA.</p>
+          </div>
+        </div>
+        <div class="tl">
+          <div class="item">
+            <span class="role">QA &amp; Control Engineer</span>
+            <span class="org">BQE Software Inc.</span>
+            <span class="when">Nov 2015 – Mar 2016</span>
+            <p class="desc">Tested BillQuick, WebSuite, ArchiOffice, and BQE Online with black-box and white-box techniques across the STLC.</p>
+          </div>
+        </div>
+        <div class="tl">
+          <div class="item">
+            <span class="role">Software Developer &amp; Trainer</span>
+            <span class="org">IAC Software Solutions</span>
+            <span class="when">Dec 2014 – Jan 2016</span>
+            <p class="desc">Built web apps with HTML, CSS, PHP, and SQL; delivered training in C, C++, Java, and database design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEACHING / TALKS / AWARDS ===================== -->
+<section class="band" id="teaching">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">06</span><h2>Teaching, talks &amp; distinctions</h2></div>
+
+    <div class="stack">
+      <div class="block">
+        <h3>Teaching, supervision &amp; curriculum</h3>
+        <ul class="clean">
+          <li><b>Teaching areas:</b> Software Engineering, Software Quality Assurance, Computer Networks, C and Python programming, Data Structures, Algorithms, and Research Methodology; undergraduate and postgraduate.</li>
+          <li><b>Research supervision:</b> Guided student research projects and theses at Lovely Professional University.</li>
+          <li><b>Curriculum development:</b> Contributed to undergraduate and postgraduate programmes at the University of Kashmir.</li>
+          <li><b>Laboratory instruction &amp; mentoring:</b> Programming and computer-network labs and research-methods teaching at NIT Srinagar; mentored a seven-member Smart India Hackathon 2019 team.</li>
+        </ul>
+      </div>
+
+      <div class="two">
+        <div class="block">
+          <h3>Invited talks &amp; engagement</h3>
+          <ul class="clean">
+            <li><b>Invited Speaker, NIT Srinagar (2026):</b> session on "Quantum AI."</li>
+            <li><b>Invited Expert, AI Summit 2026:</b> Skill Development Centre, SKIMS, Srinagar, pre-summit event on AI in healthcare.</li>
+            <li><b>Invited Speaker, National Conference on Patient Safety (2025):</b> "Artificial Intelligence: Safeguarding Patients in the Era of Digital Healthcare," SKICC, Srinagar.</li>
+            <li><b>Expert Resource Person:</b> Python for Artificial Intelligence Workshop, NIT Srinagar, Oct 2025.</li>
+            <li><b>Invited Expert, Codevolution 2025:</b> Green Valley Educational Institute, Srinagar.</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h3>Awards &amp; service</h3>
+          <ul class="clean">
+            <li><b>Best Paper Award,</b> ICAST 2018.</li>
+            <li><b>Second rank nationally,</b> Computer Science Learning Test (CSLT), 2020.</li>
+            <li><b>Fourth rank,</b> B.Tech. CSE, University of Kashmir, 2015.</li>
+            <li><b>Mentor,</b> Smart India Hackathon 2019 (Ministry of Water Resources problem statement).</li>
+            <li><b>Committee &amp; coordination:</b> Indian Science Congress 2019 (Certificate of Appreciation); Convergence-17, Central University of Punjab.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS + CERTS ===================== -->
+<section class="band" id="skills">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">07</span><h2>Technical expertise</h2></div>
+
+    <div class="skill-row"><div class="k">Quantum computing &amp; experimentation</div><div class="v">IBM Qiskit, QSim, noise-aware testing, self-baseline calibration, and experimental evaluation across noise regimes and IBM Quantum hardware.</div></div>
+    <div class="skill-row"><div class="k">Empirical research methods</div><div class="v">Repository mining, manual bug annotation, longitudinal analysis, experimental design, hypothesis testing, correlation, and regression.</div></div>
+    <div class="skill-row"><div class="k">Machine learning &amp; data analysis</div><div class="v">Applied machine learning, statistical analysis, and data analysis.</div></div>
+    <div class="skill-row"><div class="k">Software engineering &amp; testing</div><div class="v">Software Testing Life Cycle, black-box and white-box testing, software quality assurance, and Selenium.</div></div>
+    <div class="skill-row"><div class="k">Programming</div><div class="v">Python, C/C++, Java, SQL, PHP, JavaScript, and HTML/CSS.</div></div>
+    <div class="skill-row"><div class="k">Tools</div><div class="v">LaTeX, Linux, Android Studio, Git, Jupyter Notebook, and MATLAB.</div></div>
+
+    <div class="three" style="margin-top:38px">
+      <div class="cert">
+        <h3>Quantum computing</h3>
+        <ul>
+          <li>Practical Quantum Computing with IBM Qiskit for Beginners, Packt, 2025. <code>5YEHHGNZRTXL</code></li>
+          <li>Quantum Computing for Everyone, Fractal, 2025. <code>TVMUKRJZFN6W</code></li>
+          <li>AI-Assisted Software Engineering for Quantum Computing and PQC (AI-SEQ), QuLearnLabs, 2025.</li>
+          <li>Quantum Computing: Theory to Physical Implementation, IISc, 2025.</li>
+          <li>Quantum Computing using QSim, C-DAC, 2023.</li>
+        </ul>
+      </div>
+      <div class="cert">
+        <h3>Software engineering &amp; testing</h3>
+        <ul>
+          <li>Software Engineering: Implementation and Testing, HKUST, 2024. <code>4JHZMJRC6SCX</code></li>
+          <li>Introduction to Software Engineering (Honors), IBM, 2024. <code>AVHGTHQIKMZL</code></li>
+          <li>Web and Mobile Testing with Selenium, Univ. of Minnesota, 2024. <code>70HFKDW4TIBO</code></li>
+          <li>Foundations of Software Testing and Validation, Univ. of Leeds, 2024. <code>JSKJL49QZQ48</code></li>
+        </ul>
+      </div>
+      <div class="cert">
+        <h3>Programming &amp; other</h3>
+        <ul>
+          <li>Python for Data Science, AI &amp; Development, IBM, 2024. <code>LPJOSJRJIGJV</code></li>
+          <li>Programming in Python, Meta, 2024. <code>B3A0PXAP0PRX</code></li>
+          <li>CompTIA Network+, 2019 · CCNA, University of Kashmir, 2015 (Grade A).</li>
+          <li><b>Languages:</b> English, Urdu (fluent), Kashmiri (native), Arabic (reading &amp; writing).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EARLIER PUBLICATIONS ===================== -->
+<section class="band" id="earlier">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">08</span><h2>Earlier publications</h2></div>
+
+    <details class="earlier">
+      <summary>Journals <span class="count">&nbsp;· 26</span><span class="chev">›</span></summary>
+      <div class="inner">
+        <ol class="pubs">
+          <li><span class="me">M. M. Yousuf</span> and M. Rashid, "Analysis of the Change in Bugginess and Adaptiveness of Bug Tracking Trac Systems for Python Softwares." <span class="pub-meta"><span class="pub-venue">Multimedia Tools and Applications</span>, Springer Nature, 2022. <a href="https://doi.org/10.1007/s11042-022-13246-8" target="_blank" rel="noopener">DOI</a></span></li>
+          <li><span class="me">M. M. Yousuf</span>, B. Majid, M. Rashid, and U. I. Wani, "On the Statistical Relationships Between the Coding Standards and the Reported Bugs of the Python Software Systems." <span class="pub-meta"><span class="pub-venue">Think India</span>, vol. 22, no. 3, pp. 7718–7727, 2019.</span></li>
+          <li>U. I. Wani, <span class="me">M. M. Yousuf</span>, and M. Rashid, "IoT Architecture, Challenges and Future Directions: A Mirror Review." <span class="pub-meta"><span class="pub-venue">Think India</span>, vol. 22, no. 3, pp. 8402–8410, 2019.</span></li>
+          <li>U. I. Wani, G. Singh, <span class="me">M. M. Yousuf</span>, M. Rashid, and B. Talwar, "A Brief Survey on Various Security Attacks in IoT." <span class="pub-meta"><span class="pub-venue">Think India Journal</span>, vol. 22, no. 3, pp. 8392–8401, 2019.</span></li>
+          <li>M. Rashid, A. Kaur, <span class="me">M. M. Yousuf</span>, and R. Puri, "Comparative Analysis of Big Data Projects for Solving Computational Challenges in Data." <span class="pub-meta"><span class="pub-venue">Think India Journal</span>, vol. 22, no. 3, pp. 8090–8096, 2019.</span></li>
+          <li><span class="me">M. M. Yousuf</span>, R. Kumar, M. Singh, R. Yadav, and Isha, "Emotion Analysis with Deep Learning and Machine Learning Technologies." <span class="pub-meta"><span class="pub-venue">Think India Journal</span>, vol. 22, no. 3, pp. 7728–7737, 2019.</span></li>
+          <li><span class="me">M. M. Yousuf</span>, S. Kar, M. Rashid, and B. Majid, "A Comprehensive Review on the Different Types of the Attacks and Defense in Deep Learning." <span class="pub-meta"><span class="pub-venue">Think India Journal</span>, vol. 22, no. 3, pp. 7738–7748, 2019.</span></li>
+          <li><span class="me">M. M. Yousuf</span>, S. Kumar, M. Rashid, and B. Majid, "Digital Data Forgetting: A Machine Learning Approach." <span class="pub-meta"><span class="pub-venue">Think India Journal</span>, vol. 22, no. 30, pp. 318–324, 2019.</span></li>
+          <li>M. Rashid, <span class="me">M. M. Yousuf</span>, A. Kaur, R. Puri, and V. Goyal, "Comparative Studies on Text Extraction from Real Time Images." <span class="pub-meta"><span class="pub-venue">Think India Journal</span>, vol. 22, no. 16, pp. 2138–2142, 2019.</span></li>
+          <li>A. Ahmed, A. Kumar, and <span class="me">M. M. Yousuf</span>, "Using AZ Software Development Model to Improve the Quality of a Software Application." <span class="pub-meta"><span class="pub-venue">JETIR</span>, vol. 6, no. 1, pp. 11–18, 2019.</span></li>
+          <li><span class="me">M. M. Yousuf</span>, "Is It Safe to Uplift a Patch? An Empirical Study on Trac." <span class="pub-meta"><span class="pub-venue">International Journal of Advance Research in Science and Engineering</span>, 2018.</span></li>
+          <li>S. Soni, J. Singla, and <span class="me">M. M. Yousuf</span>, "Big Data: Frameworks and Challenges." <span class="pub-meta"><span class="pub-venue">JETIR</span>, vol. 5, no. 10, pp. 535–541, 2018.</span></li>
+          <li>V. K. Pandey, J. Singla, and <span class="me">M. M. Yousuf</span>, "Mobile Cloud Computing: A New Opportunity for the Rapidly Changing World." <span class="pub-meta"><span class="pub-venue">JETIR</span>, vol. 5, no. 10, pp. 566–569, 2018.</span></li>
+          <li>K. Rana and <span class="me">M. M. Yousuf</span>, "Comparative Analysis of Testing Tools." <span class="pub-meta"><span class="pub-venue">JETIR</span>, vol. 5, no. 10, pp. 585–591, 2018.</span></li>
+          <li>N. Saqib and <span class="me">M. M. Yousuf</span>, "A Review of Mitigating Cost Concerns to Enhance Maintainability in SDLC." <span class="pub-meta"><span class="pub-venue">JETIR</span>, vol. 5, no. 11, pp. 162–169, 2018.</span></li>
+          <li>N. Saqib, <span class="me">M. M. Yousuf</span>, K. Rana, and Kavita, "A Review on the Internet of Things for Healthcare." <span class="pub-meta"><span class="pub-venue">JETIR</span>, vol. 5, no. 11, pp. 244–253, 2018.</span></li>
+          <li>Chandini, J. Singla, and <span class="me">M. M. Yousuf</span>, "Denial of Service Attack in Internet of Things." <span class="pub-meta"><span class="pub-venue">JETIR</span>, vol. 5, no. 12, pp. 920–928, 2018.</span></li>
+          <li>A. A. Gadoo, <span class="me">M. M. Yousuf</span>, M. Rashid, and S. Khare, "A Survey on Source Camera Identification Using Image Features." <span class="pub-meta"><span class="pub-venue">JETIR</span>, vol. 5, no. 12, pp. 989–999, 2018.</span></li>
+          <li>Divya K. and <span class="me">M. M. Yousuf</span>, "A Review on Image Processing and Image Segmentation." <span class="pub-meta"><span class="pub-venue">IJRAR</span>, vol. 5, no. 4, pp. 310–321, 2018.</span></li>
+          <li>A. Paliwal, M. Dhindsa, <span class="me">M. M. Yousuf</span>, and Roopam, "Malware Detection and Prevention Based on Machine Learning Algorithms." <span class="pub-meta"><span class="pub-venue">IJRAR</span>, vol. 5, no. 4, pp. 205–214, 2018.</span></li>
+          <li>Sk. Md. Alfayeed, <span class="me">M. M. Yousuf</span>, and M. Dhindsa, "An Overview and Applications of Artificial Intelligence and Robotics." <span class="pub-meta"><span class="pub-venue">IJRAR</span>, vol. 5, no. 4, pp. 783–787, 2018.</span></li>
+          <li>G. S. Reddy, <span class="me">M. M. Yousuf</span>, and S. M. Lakshmi, "Review Based on Detection System Using Web Content Mining in Cyberbullying." <span class="pub-meta"><span class="pub-venue">IJRAR</span>, vol. 5, no. 4, pp. 1094–1098, 2018.</span></li>
+          <li><span class="me">M. M. Yousuf</span>, "A Comparative Study on Agile Software Development Technologies." <span class="pub-meta"><span class="pub-venue">IJRAR</span>, vol. 5, no. 4, pp. 1112–1119, 2018.</span></li>
+          <li>Y. Kumar and <span class="me">M. M. Yousuf</span>, "A Review on Wireless Sensor Network." <span class="pub-meta"><span class="pub-venue">IJRAR</span>, vol. 5, no. 4, pp. 442–451, 2018.</span></li>
+          <li>A. Kumar, J. Singla, and <span class="me">M. M. Yousuf</span>, "An Overview of Windows Update, Security Patch and Issues." <span class="pub-meta"><span class="pub-venue">IJRAR</span>, vol. 5, no. 4, pp. 1077–1084, 2018.</span></li>
+          <li>M. Rashid and <span class="me">M. M. Yousuf</span>, "Crop Disease Detection Using Image Processing Techniques: A Systematic Review." <span class="pub-meta"><span class="pub-venue">Journal of Gujarat Research Society</span>.</span></li>
+          <li>S. Khare, <span class="me">M. M. Yousuf</span>, A. A. Gadoo, and A. K. Shukla, "Virtualization and Security in Cloud Computing." <span class="pub-meta"><span class="pub-venue">JETIR</span>.</span></li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="earlier" style="margin-top:14px">
+      <summary>Conferences <span class="count">&nbsp;· 11</span><span class="chev">›</span></summary>
+      <div class="inner">
+        <ol class="pubs">
+          <li><span class="me">M. M. Yousuf</span>, S. Chatterjee, and M. Rasool, "COVID-19 Outbreak Cases and Healthcare Database." <span class="pub-meta"><span class="pub-venue">2021 International Conference on Intelligent Engineering and Management (ICIEM)</span>, IEEE, 2021. <a href="https://doi.org/10.1109/ICIEM51511.2021.9445298" target="_blank" rel="noopener">DOI</a> · Scopus</span></li>
+          <li>S. Hasan, <span class="me">M. M. Yousuf</span>, M. Farooq, N. Marwah, S. A. A. Andrabi, and H. Kumar, "e-Vaccine: An Immunization App." <span class="pub-meta"><span class="pub-venue">2021 2nd ICIEM</span>, IEEE, 2021. <a href="https://doi.org/10.1109/ICIEM51511.2021.9445386" target="_blank" rel="noopener">DOI</a> · Scopus</span></li>
+          <li><span class="me">M. M. Yousuf</span> and N. Saqib, "Design and Implementation of Shortest Path Line Follower Autonomous Rover Using Decision Making Algorithms." <span class="pub-meta"><span class="pub-venue">IEEE Asian Conference on Innovation in Technology (ASIANCON)</span>, 2021. Scopus</span></li>
+          <li>N. Saqib, <span class="me">M. M. Yousuf</span>, and M. Rashid, "Design and Implementation Issues in Autonomous Vehicles: A Comparative Review." <span class="pub-meta"><span class="pub-venue">2021 2nd ICCAKM</span>, Dubai, IEEE, 2021, pp. 157–162. <a href="https://doi.org/10.1109/ICCAKM50778.2021.9357706" target="_blank" rel="noopener">DOI</a> · Scopus</span></li>
+          <li>M. Rashid, A. Hamid, N. Ahmad, M. B. Rehman, and <span class="me">M. M. Yousuf</span>, "Novel Machine Learning Approach for Sentiment Analysis of Real Time Twitter Data with Apache Flume." <span class="pub-meta"><span class="pub-venue">2020 6th PDGC</span>, IEEE, 2020, pp. 336–340. <a href="https://doi.org/10.1109/PDGC50313.2020.9315782" target="_blank" rel="noopener">DOI</a></span></li>
+          <li>N. S. Vishnu, <span class="me">M. M. Yousuf</span>, S. M. Lakshmi, and M. Rashid, "MANET Congestion Alerting and Adapting Protocols: A Comparative Study." <span class="pub-meta"><span class="pub-venue">2020 ICIEM</span>, IEEE, 2020, pp. 228–233. Scopus</span></li>
+          <li>M. Rashid, <span class="me">M. M. Yousuf</span>, B. Ram, and V. Goyal, "Novel Big Data Approach for Drug Prediction in Health Care Systems." <span class="pub-meta"><span class="pub-venue">2019 ICACTM</span>, IEEE, 2019, pp. 325–329. Scopus</span></li>
+          <li>I. Nazeer, <span class="me">M. M. Yousuf</span>, M. Rashid, and U. I. Wani, "Medical Diagnosis Cloud Model for Detection of Kidney Diseases." <span class="pub-meta"><span class="pub-venue">2019 5th ICIIP</span>, IEEE, 2019, pp. 315–320. Scopus</span></li>
+          <li><span class="me">M. M. Yousuf</span>, "Reducing the Software Maintenance Cost: An Empirical Study on the Python Software Systems." <span class="pub-meta"><span class="pub-venue">ICAST-2018</span>, Rayat Bahra, Ropar, 2018. <b>Best Paper Award</b></span></li>
+          <li><span class="me">M. M. Yousuf</span>, "A Survey on Cloud Computing: A Real Buzzword in the IT World." <span class="pub-meta"><span class="pub-venue">CEPO-2016</span>, Central University of Punjab, Bathinda, 2016.</span></li>
+          <li><span class="me">M. M. Yousuf</span>, "Emergency Communication: An Android App." <span class="pub-meta"><span class="pub-venue">11th JK Science Congress</span>, University of Kashmir, Srinagar, 2015.</span></li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="earlier" style="margin-top:14px">
+      <summary>Book chapters <span class="count">&nbsp;· 2</span><span class="chev">›</span></summary>
+      <div class="inner">
+        <ol class="pubs">
+          <li><span class="me">M. M. Yousuf</span>, S. A. Sofi, and F. A. Reegu, "Challenges of Cyber-Physical Systems in Rural Education." <span class="pub-meta"><span class="pub-venue">Cyber-Physical System for Rural Development</span>, pp. 186–200, 2025.</span></li>
+          <li><span class="me">M. M. Yousuf</span>, S. Khare, A. A. Gadoo, and M. Rashid, "Blockchain Security in Cloud Computing: Use Cases, Challenges and Solutions." <span class="pub-meta">Springer Nature. Scopus</span></li>
+        </ol>
+      </div>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="band" id="contact">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">09</span><h2>Contact</h2></div>
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <h3>Let's work together</h3>
+        <p>Open to research collaboration, PhD and postdoc opportunities, reviewing, and invited talks in quantum software engineering and quantum machine learning. Send a message with the form, or reach me directly.</p>
+        <div class="contact-direct">
+          <a href="mailto:miryousuf.uok@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>miryousuf.uok@gmail.com</a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=keHp6E8AAAAJ" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z"/></svg>Google Scholar</a>
+          <a href="https://orcid.org/0009-0001-7453-3358" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zM8.3 17.4H6.7V8.9h1.6v8.5zM7.5 7.8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM17.6 13.2c0 2.6-1.7 4.2-4.2 4.2h-2.7V8.9h2.7c2.5 0 4.2 1.7 4.2 4.3z"/></svg>ORCID iD</a>
+          <a href="https://www.linkedin.com/in/mir-yousuf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 10v7H5.5v-7H8zM6.7 6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM18.5 17H16v-3.7c0-1-.4-1.6-1.2-1.6-.7 0-1 .5-1.2 1-.1.2-.1.5-.1.7V17h-2.5v-7h2.5v1c.3-.5 1-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.4V17z"/></svg>LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="form-frame">
+        <!--
+          To activate the contact form:
+          1. Create a Google Form (forms.google.com) with fields: Name, Email, Affiliation, Message.
+          2. In the form, click Send, then the < > (Embed HTML) tab, and copy the src URL.
+          3. Delete the .form-fallback block below and uncomment the iframe, pasting your URL in place of FORM_ID.
+
+          <iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true"
+                  title="Contact form" loading="lazy">Loading the form…</iframe>
+        -->
+        <div class="form-fallback">
+          <h4>Message form</h4>
+          <p>A Google Form embeds here so visitors can reach you without opening their email client. To turn it on:</p>
+          <ol>
+            <li>Create a Google Form with fields Name, Email, Affiliation, and Message.</li>
+            <li>Open <b>Send</b>, choose the <code>&lt; &gt;</code> Embed HTML tab, and copy the link.</li>
+            <li>In this file, replace this panel with the <code>&lt;iframe&gt;</code> shown in the comment above, pasting your link in place of <code>FORM_ID</code>.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div style="font-family:var(--serif);font-size:1.2rem;color:#fff;margin-bottom:4px">Mir Mohammad Yousuf</div>
+      <p class="note">Quantum Software Engineering researcher and educator. Srinagar, Jammu and Kashmir, India.</p>
+    </div>
+    <div class="flinks">
+      <a href="#top">Back to top</a>
+      <a href="mailto:miryousuf.uok@gmail.com">Email</a>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=keHp6E8AAAAJ" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://orcid.org/0009-0001-7453-3358" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+  });
+
+  // Scrollspy: highlight the section currently in view
+  var navMap = {};
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    navMap[a.getAttribute('href').slice(1)] = a;
+  });
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      var a = navMap[en.target.id];
+      if(!a) return;
+      if(en.isIntersecting){
+        document.querySelectorAll('.nav-links a').forEach(function(x){x.classList.remove('active')});
+        a.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
+  document.querySelectorAll('main section[id]').forEach(function(s){spy.observe(s)});
+</script>
+</body>
+</html>
