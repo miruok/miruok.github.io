@@ -145,7 +145,6 @@
   .band:nth-of-type(even){background:linear-gradient(var(--paper-tint),var(--paper-tint))}
   .sec-head{display:flex;align-items:baseline;gap:14px;margin:0 0 26px}
   .sec-head h2{font-size:1.6rem;margin:0}
-  .sec-head .idx{font-family:var(--mono);font-size:.78rem;color:var(--teal);padding-top:4px}
   .sec-head::after{content:"";flex:1;height:1px;background:var(--hair);align-self:center}
 
   p.body{max-width:var(--measure)}
@@ -295,6 +294,15 @@
   .cform-status.ok{color:var(--teal-deep)}
   .cform-status.bad{color:#B4232A}
 
+  /* availability chip */
+  .avail{display:inline-flex;align-items:center;gap:9px;font-size:.9rem;font-weight:600;color:var(--teal-deep);background:var(--tint);border:1px solid var(--tint-line);padding:6px 14px;border-radius:20px;margin:0 0 16px}
+  .avail .dot{width:8px;height:8px;border-radius:50%;background:#2E9E6B;box-shadow:0 0 0 3px rgba(46,158,107,.2)}
+
+  /* footer bar + visitor counter */
+  .fbar{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;align-items:center;margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-size:.8rem;color:#8FADAB}
+  .views{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono)}
+  .views svg{width:14px;height:14px;opacity:.85}
+
   /* print to PDF */
   @media print{
     .nav,.nav-toggle,.motif,.links,.focus,.form-card,footer{display:none !important}
@@ -378,6 +386,7 @@
         <h1>Mir Mohammad Yousuf</h1>
         <div class="role">Quantum Software Engineering Researcher &amp; Educator</div>
         <p class="tag"><b>Reliable quantum computing</b> · Noise-aware testing · Quantum machine learning</p>
+        <p class="avail"><span class="dot"></span>Open to postdoctoral and teaching positions</p>
         <p class="lede">
           I work on making quantum software reliable: interpretable defect analysis, self-calibrating
           noise-aware testing evaluated on IBM Quantum hardware, and learning-based error mitigation for
@@ -421,7 +430,7 @@
 <!-- ===================== ABOUT ===================== -->
 <section class="band" id="about">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">01</span><h2>About</h2></div>
+    <div class="sec-head"><h2>About</h2></div>
     <p class="body">
       Researcher and educator combining doctoral research in Quantum Software Engineering at the National Institute of
       Technology Srinagar with over four years of university teaching as an Assistant Professor at the University of Kashmir
@@ -444,7 +453,7 @@
 <!-- ===================== RESEARCH INTERESTS ===================== -->
 <section class="band" id="research">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">02</span><h2>Research interests</h2></div>
+    <div class="sec-head"><h2>Research interests</h2></div>
     <ul class="interests">
       <li>Reliable quantum computing, Quantum Software Engineering, noise-aware testing and verification.</li>
       <li>Quantum machine learning: robustness, reproducibility, and testing of hybrid quantum-classical workflows.</li>
@@ -457,7 +466,7 @@
 <!-- ===================== PUBLICATIONS ===================== -->
 <section class="band" id="publications">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">03</span><h2>Recent publications</h2></div>
+    <div class="sec-head"><h2>Recent publications</h2></div>
     <p class="lead-sub">Recent quantum software engineering work. Earlier publications are listed at the foot of the page.</p>
 
     <div class="pub-group">
@@ -482,7 +491,7 @@
       </ol>
     </div>
 
-    <!-- <div class="pub-group">
+    <!-- <div class="pub-group"> 
       <h3>Under review and submitted</h3>
       <ol class="pubs">
         <li>
@@ -506,14 +515,14 @@
           <span class="pub-meta"><span class="pub-venue">Engineering Applications of Artificial Intelligence</span>.</span>
         </li>
       </ol>
-    </div>
-  </div> -->
+    </div> -->
+  </div> --> -->
 </section>
 
 <!-- ===================== CONTRIBUTIONS ===================== -->
 <section class="band" id="contributions">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">04</span><h2>Research contributions</h2></div>
+    <div class="sec-head"><h2>Research contributions</h2></div>
     <div class="contribs">
       <div>
         <h3>Interpretable quantum-software bug classification</h3>
@@ -546,7 +555,7 @@
 <!-- ===================== EDUCATION + EXPERIENCE ===================== -->
 <section class="band" id="experience">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">05</span><h2>Education &amp; experience</h2></div>
+    <div class="sec-head"><h2>Education &amp; experience</h2></div>
 
     <div class="cols">
       <div>
@@ -633,7 +642,7 @@
 <!-- ===================== TEACHING / TALKS / AWARDS ===================== -->
 <section class="band" id="teaching">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">06</span><h2>Teaching &amp; engagement</h2></div>
+    <div class="sec-head"><h2>Teaching &amp; engagement</h2></div>
 
     <div class="stack">
       <div class="block">
@@ -674,7 +683,7 @@
 <!-- ===================== AWARDS ===================== -->
 <section class="band" id="awards">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">07</span><h2>Awards &amp; honours</h2></div>
+    <div class="sec-head"><h2>Awards &amp; honours</h2></div>
     <div class="three">
       <div class="block">
         <h3>Academic &amp; research</h3>
@@ -711,7 +720,7 @@
 <!-- ===================== SKILLS + CERTS ===================== -->
 <section class="band" id="skills">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">08</span><h2>Technical expertise</h2></div>
+    <div class="sec-head"><h2>Technical expertise</h2></div>
 
     <div class="skill-row"><div class="k">Quantum computing &amp; experimentation</div><div class="v">IBM Qiskit, QSim, noise-aware testing, self-baseline calibration, and experimental evaluation across noise regimes and IBM Quantum hardware.</div></div>
     <div class="skill-row"><div class="k">Empirical research methods</div><div class="v">Repository mining, manual bug annotation, longitudinal analysis, experimental design, hypothesis testing, correlation, and regression.</div></div>
@@ -756,7 +765,7 @@
 <!-- ===================== EARLIER PUBLICATIONS ===================== -->
 <section class="band" id="earlier">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">09</span><h2>Earlier publications</h2></div>
+    <div class="sec-head"><h2>Earlier publications</h2></div>
 
     <details class="earlier">
       <summary>Journals <span class="count">&nbsp;· 26</span><span class="chev">›</span></summary>
@@ -829,7 +838,7 @@
 <!-- ===================== CONTACT ===================== -->
 <section class="band" id="contact">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">10</span><h2>Contact</h2></div>
+    <div class="sec-head"><h2>Contact</h2></div>
     <div class="contact-grid">
       <div class="contact-intro">
         <h3>Let's work together</h3>
@@ -872,6 +881,7 @@
             <textarea name="message" rows="5" required minlength="10" aria-describedby="err-message"></textarea>
             <span class="err" id="err-message" hidden></span>
           </label>
+          <div id="cfCaptcha" class="cf-captcha"></div>
           <button type="submit" id="cfBtn">Send message</button>
           <p class="cform-status" id="cfStatus" role="status" aria-live="polite" hidden></p>
         </form>
@@ -895,6 +905,13 @@
       <a href="https://orcid.org/0009-0001-7453-3358" target="_blank" rel="noopener">ORCID</a>
       <a href="https://github.com/miruok" target="_blank" rel="noopener">GitHub</a>
     </div>
+  </div>
+  <div class="wrap fbar">
+    <span>&copy; 2026 Mir Mohammad Yousuf</span>
+    <span class="views" id="views" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span id="viewsN">&mdash;</span> views
+    </span>
   </div>
 </footer>
 
@@ -931,10 +948,20 @@
   // email until an access key is added, so the button always does something useful.
   var cf = document.getElementById('contactForm');
   if(cf){
-    var ACCESS_KEY = 'e0577e5a-693b-49cf-9f79-36d2609376f6'; // paste your Web3Forms access key here
+    var ACCESS_KEY = 'WEB3FORMS_ACCESS_KEY';        // paste your Web3Forms access key here
+    var TURNSTILE_SITEKEY = 'TURNSTILE_SITEKEY';    // optional: paste a Cloudflare Turnstile site key for captcha
     var btn = document.getElementById('cfBtn');
     var statusEl = document.getElementById('cfStatus');
     var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    var captchaId = null;
+
+    // Load Cloudflare Turnstile only if a site key is configured
+    if(TURNSTILE_SITEKEY !== 'TURNSTILE_SITEKEY'){
+      window.cfTurnstileLoad = function(){ captchaId = turnstile.render('#cfCaptcha', {sitekey: TURNSTILE_SITEKEY}); };
+      var ts = document.createElement('script');
+      ts.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=cfTurnstileLoad';
+      ts.async = true; ts.defer = true; document.head.appendChild(ts);
+    }
 
     function setErr(field, msg){
       var el = cf.elements[field];
@@ -955,7 +982,6 @@
       return true;
     }
 
-    // Re-check a field as the user fixes it
     ['name','email','message'].forEach(function(f){
       cf.elements[f].addEventListener('input', function(){
         if(cf.elements[f].getAttribute('aria-invalid') === 'true') validate();
@@ -981,23 +1007,33 @@
 
       if(f.botcheck && f.botcheck.checked) return; // honeypot: silently drop bots
 
+      // Require captcha when configured
+      var captchaToken = '';
+      if(TURNSTILE_SITEKEY !== 'TURNSTILE_SITEKEY' && window.turnstile){
+        captchaToken = turnstile.getResponse(captchaId);
+        if(!captchaToken){ showStatus('Please complete the verification below.', 'bad'); return; }
+      }
+
       btn.disabled = true;
       var label = btn.textContent;
       btn.textContent = 'Sending…';
       statusEl.hidden = true;
 
+      var payload = {
+        access_key: ACCESS_KEY,
+        subject: 'Portfolio contact from ' + f.name.value,
+        from_name: f.name.value,
+        name: f.name.value,
+        email: f.email.value,
+        affiliation: f.affiliation.value,
+        message: f.message.value
+      };
+      if(captchaToken) payload['cf-turnstile-response'] = captchaToken;
+
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {'Content-Type':'application/json','Accept':'application/json'},
-        body: JSON.stringify({
-          access_key: ACCESS_KEY,
-          subject: 'Portfolio contact from ' + f.name.value,
-          from_name: f.name.value,
-          name: f.name.value,
-          email: f.email.value,
-          affiliation: f.affiliation.value,
-          message: f.message.value
-        })
+        body: JSON.stringify(payload)
       })
       .then(function(r){ return r.json(); })
       .then(function(data){
@@ -1005,9 +1041,31 @@
         else { showStatus('Something went wrong. Please email miryousuf.uok@gmail.com instead.', 'bad'); }
       })
       .catch(function(){ showStatus('Network error. Please email miryousuf.uok@gmail.com instead.', 'bad'); })
-      .finally(function(){ btn.disabled = false; btn.textContent = label; });
+      .finally(function(){
+        btn.disabled = false; btn.textContent = label;
+        if(window.turnstile && captchaId !== null) turnstile.reset(captchaId);
+      });
     });
   }
+
+  // Visitor counter. The starting number lives on the counter service (seeded once, server-side),
+  // so it never appears in this page's source. On failure the counter simply stays hidden.
+  (function(){
+    var box = document.getElementById('views');
+    var out = document.getElementById('viewsN');
+    if(!box) return;
+    var NS = 'miruok-github-io', KEY = 'site-visits';
+    var API = 'https://abacus.jasoncameron.dev';
+    var counted = sessionStorage.getItem('vc');           // count once per browser session
+    var url = counted ? (API + '/get/' + NS + '/' + KEY) : (API + '/hit/' + NS + '/' + KEY);
+    fetch(url).then(function(r){ return r.json(); }).then(function(d){
+      var n = (d && (d.value != null ? d.value : (d.count != null ? d.count : d.hits)));
+      if(n == null || isNaN(n)) return;
+      out.textContent = Number(n).toLocaleString('en-US');
+      box.hidden = false;
+      if(!counted) sessionStorage.setItem('vc','1');
+    }).catch(function(){ /* service unavailable: leave hidden, no base number is exposed */ });
+  })();
 </script>
 </body>
 </html>
