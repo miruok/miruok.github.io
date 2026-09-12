@@ -267,18 +267,28 @@
   .contact-direct a{display:inline-flex;align-items:center;gap:10px;color:var(--slate);font-weight:500;font-size:.94rem;width:fit-content}
   .contact-direct a:hover{color:var(--teal);text-decoration:none}
   .contact-direct svg{width:16px;height:16px;color:var(--teal);flex:none}
-  .form-frame{border:1px solid var(--hair);border-radius:12px;overflow:hidden;background:var(--paper)}
-  .form-frame iframe{width:100%;min-height:820px;border:0;display:block}
-  .form-fallback{padding:28px}
-  .form-fallback h4{margin:0 0 10px;font-family:var(--serif);font-size:1.05rem;color:var(--slate);font-weight:600}
-  .form-fallback p{margin:0 0 10px;color:var(--muted);font-size:.9rem}
-  .form-fallback ol{margin:0;padding-left:20px;color:var(--muted);font-size:.88rem}
-  .form-fallback li{margin-bottom:7px}
-  .form-fallback code{font-family:var(--mono);font-size:.82em;color:var(--teal-deep);background:var(--tint);padding:1px 5px;border-radius:3px}
+  .form-card{border:1px solid var(--hair);border-radius:12px;background:var(--paper);padding:26px}
+  .cform{display:grid;gap:14px}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .cform label{display:grid;gap:6px;font-size:.8rem;font-weight:600;color:var(--slate)}
+  .cform input,.cform textarea{
+    font-family:var(--sans);font-size:.95rem;color:var(--ink);
+    background:var(--paper);border:1px solid var(--tint-line);border-radius:8px;
+    padding:10px 12px;width:100%;
+  }
+  .cform input:focus,.cform textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal)}
+  .cform textarea{resize:vertical;min-height:118px;font-weight:400}
+  .cform button{
+    justify-self:start;margin-top:4px;
+    background:var(--teal-deep);color:#fff;border:0;border-radius:8px;
+    padding:11px 24px;font-family:var(--sans);font-size:.92rem;font-weight:600;cursor:pointer;
+  }
+  .cform button:hover{background:var(--teal)}
+  .form-note{font-size:.84rem;color:var(--muted);margin:14px 0 0}
 
   /* print to PDF */
   @media print{
-    .nav,.nav-toggle,.motif,.links,.focus,.form-frame,footer{display:none !important}
+    .nav,.nav-toggle,.motif,.links,.focus,.form-card,footer{display:none !important}
     body{font-size:10.5px;color:#000;background:#fff}
     .band,.hero{padding:12px 0;border:none;background:#fff !important}
     .sec-head::after{background:#ccc}
@@ -303,7 +313,7 @@
     .nav-toggle{display:block}
     .hero-grid{grid-template-columns:1fr;gap:26px}
     .portrait{order:-1;width:120px;height:120px;font-size:2.6rem}
-    .interests,.contribs,.cols,.three,.two,.contact-grid{grid-template-columns:1fr}
+    .interests,.contribs,.cols,.three,.two,.contact-grid,.frow{grid-template-columns:1fr}
     .cols{gap:34px}
     .skill-row{grid-template-columns:1fr;gap:2px}
   }
@@ -328,6 +338,7 @@
       <a href="#contributions">Contributions</a>
       <a href="#experience">Experience</a>
       <a href="#teaching">Teaching</a>
+      <a href="#awards">Awards</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
@@ -365,7 +376,7 @@
         </p>
 
         <div class="links">
-          <a class="primary" href="Mir_Yousuf_CV.pdf" target="_blank" rel="noopener">
+          <a class="primary" href="Updated_CV_PDF_Mir_Yousuf.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>Download CV</a>
           <a href="mailto:miryousuf.uok@gmail.com" aria-label="Email">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
@@ -377,8 +388,8 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="3" opacity=".15"/><path d="M12.7 7.6c1.9 0 3 .9 3 2.6 0 1.3-.8 2.2-2 2.5l2.4 3.7h-1.8l-2.1-3.4h-1.1v3.4H9.5V7.6h3.2zm-1.6 1.4v2.6h1.4c1 0 1.5-.5 1.5-1.3 0-.9-.5-1.3-1.5-1.3h-1.4z"/></svg>ResearchGate</a>
           <a href="https://www.linkedin.com/in/mir-yousuf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="3" opacity=".15"/><path d="M8 10v7H5.5v-7H8zM6.7 6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM18.5 17H16v-3.7c0-1-.4-1.6-1.2-1.6-.7 0-1 .5-1.2 1-.1.2-.1.5-.1.7V17h-2.5v-7h2.5v1c.3-.5 1-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.4V17z"/></svg>LinkedIn</a>
-          <!-- Replace USERNAME with your GitHub handle -->
-          <a href="https://github.com/USERNAME" target="_blank" rel="noopener">
+          
+          <a href="https://github.com/miruok" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.4 4.6-4.6 4.9.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>GitHub</a>
         </div>
 
@@ -390,8 +401,7 @@
         </div>
       </div>
 
-      <!-- Add a photo at assets/photo.jpg to replace the monogram automatically -->
-      <img class="portrait" src="assets/photo.jpg" alt="Mir Mohammad Yousuf"
+      <img class="portrait" src="Mir_photo.jpg" alt="Mir Mohammad Yousuf"
            onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'portrait',textContent:'MY'}))">
     </div>
   </div>
@@ -614,7 +624,7 @@
 <!-- ===================== TEACHING / TALKS / AWARDS ===================== -->
 <section class="band" id="teaching">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">06</span><h2>Teaching, talks &amp; distinctions</h2></div>
+    <div class="sec-head"><span class="idx">06</span><h2>Teaching &amp; engagement</h2></div>
 
     <div class="stack">
       <div class="block">
@@ -640,15 +650,50 @@
         </div>
 
         <div class="block">
-          <h3>Awards &amp; service</h3>
+          <h3>Service &amp; mentoring</h3>
           <ul class="clean">
-            <li><b>Best Paper Award,</b> ICAST 2018.</li>
-            <li><b>Second rank nationally,</b> Computer Science Learning Test (CSLT), 2020.</li>
-            <li><b>Fourth rank,</b> B.Tech. CSE, University of Kashmir, 2015.</li>
-            <li><b>Mentor,</b> Smart India Hackathon 2019 (Ministry of Water Resources problem statement).</li>
-            <li><b>Committee &amp; coordination:</b> Indian Science Congress 2019 (Certificate of Appreciation); Convergence-17, Central University of Punjab.</li>
+            <li><b>Mentor,</b> Smart India Hackathon 2019, Ministry of Water Resources problem statement.</li>
+            <li><b>Registration &amp; website committee,</b> Indian Science Congress, Lovely Professional University, 2019.</li>
+            <li><b>Coordination &amp; organisation,</b> Convergence-17, Central University of Punjab, 2017.</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AWARDS ===================== -->
+<section class="band" id="awards">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">07</span><h2>Awards &amp; honours</h2></div>
+    <div class="three">
+      <div class="block">
+        <h3>Academic &amp; research</h3>
+        <ul class="clean">
+          <li><b>Best Paper Award,</b> International Conference on Advances in Science and Technology (ICAST), 2018.</li>
+          <li><b>Second rank nationally,</b> Computer Science Learning Test (CSLT), 2020; score 31/40.</li>
+          <li><b>Fourth rank,</b> B.Tech. Computer Science and Engineering, University of Kashmir, 2015.</li>
+          <li><b>Second rank,</b> High School (JKBOSE), R.P. School, Malla Bagh, Srinagar, 2008.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>Athletics &amp; sport</h3>
+        <ul class="clean">
+          <li><b>National runner-up,</b> 19th Senior National Tennis Ball Cricket Championship, representing Jammu and Kashmir, Tiruttani, Tamil Nadu, 2008.</li>
+          <li><b>Bronze,</b> 100 m and 400 m, Sixth Annual Athletic Meet, Central University of Punjab, 2018.</li>
+          <li><b>Silver,</b> 400 m, Fifth Annual Athletic Meet, Central University of Punjab, 2017.</li>
+          <li><b>Third place,</b> 400 m relay, Fifth Annual Athletic Meet, Central University of Punjab, 2017.</li>
+          <li><b>Bronze,</b> shot-put, Fifth Annual Athletic Meet, Central University of Punjab, 2017.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>Service &amp; cultural</h3>
+        <ul class="clean">
+          <li><b>Certificate of Appreciation,</b> registration and website committee, Indian Science Congress, Lovely Professional University, 2019.</li>
+          <li><b>Certificate of Appreciation,</b> Unity in Diversity cultural event, representing Jammu and Kashmir, Central University of Punjab, 2018.</li>
+          <li><b>Certificate of Appreciation,</b> volunteer service, Sixth Annual Athletic Meet, Central University of Punjab, 2018.</li>
+          <li><b>Best Photography Award,</b> University Bash Cricket Championship, Central University of Punjab, 2018.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -657,7 +702,7 @@
 <!-- ===================== SKILLS + CERTS ===================== -->
 <section class="band" id="skills">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">07</span><h2>Technical expertise</h2></div>
+    <div class="sec-head"><span class="idx">08</span><h2>Technical expertise</h2></div>
 
     <div class="skill-row"><div class="k">Quantum computing &amp; experimentation</div><div class="v">IBM Qiskit, QSim, noise-aware testing, self-baseline calibration, and experimental evaluation across noise regimes and IBM Quantum hardware.</div></div>
     <div class="skill-row"><div class="k">Empirical research methods</div><div class="v">Repository mining, manual bug annotation, longitudinal analysis, experimental design, hypothesis testing, correlation, and regression.</div></div>
@@ -702,7 +747,7 @@
 <!-- ===================== EARLIER PUBLICATIONS ===================== -->
 <section class="band" id="earlier">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">08</span><h2>Earlier publications</h2></div>
+    <div class="sec-head"><span class="idx">09</span><h2>Earlier publications</h2></div>
 
     <details class="earlier">
       <summary>Journals <span class="count">&nbsp;· 26</span><span class="chev">›</span></summary>
@@ -775,7 +820,7 @@
 <!-- ===================== CONTACT ===================== -->
 <section class="band" id="contact">
   <div class="wrap">
-    <div class="sec-head"><span class="idx">09</span><h2>Contact</h2></div>
+    <div class="sec-head"><span class="idx">10</span><h2>Contact</h2></div>
     <div class="contact-grid">
       <div class="contact-intro">
         <h3>Let's work together</h3>
@@ -792,25 +837,23 @@
         </div>
       </div>
 
-      <div class="form-frame">
+      <div class="form-card">
         <!--
-          To activate the contact form:
-          1. Create a Google Form (forms.google.com) with fields: Name, Email, Affiliation, Message.
-          2. In the form, click Send, then the < > (Embed HTML) tab, and copy the src URL.
-          3. Delete the .form-fallback block below and uncomment the iframe, pasting your URL in place of FORM_ID.
-
-          <iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true"
-                  title="Contact form" loading="lazy">Loading the form…</iframe>
+          This form works out of the box: submitting opens the visitor's email app with the
+          message pre-filled to you. To receive messages directly in your inbox instead (no email
+          app needed on the sender's side), create a free form at formspree.io, then replace
+          YOUR_FORM_ID below with the id Formspree gives you. Nothing else needs to change.
         -->
-        <div class="form-fallback">
-          <h4>Message form</h4>
-          <p>A Google Form embeds here so visitors can reach you without opening their email client. To turn it on:</p>
-          <ol>
-            <li>Create a Google Form with fields Name, Email, Affiliation, and Message.</li>
-            <li>Open <b>Send</b>, choose the <code>&lt; &gt;</code> Embed HTML tab, and copy the link.</li>
-            <li>In this file, replace this panel with the <code>&lt;iframe&gt;</code> shown in the comment above, pasting your link in place of <code>FORM_ID</code>.</li>
-          </ol>
-        </div>
+        <form class="cform" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="frow">
+            <label>Name<input type="text" name="name" autocomplete="name" required></label>
+            <label>Email<input type="email" name="email" autocomplete="email" required></label>
+          </div>
+          <label>Affiliation<input type="text" name="affiliation" autocomplete="organization"></label>
+          <label>Message<textarea name="message" rows="5" required></textarea></label>
+          <button type="submit">Send message</button>
+        </form>
+        <p class="form-note">Prefer email? Write to <a href="mailto:miryousuf.uok@gmail.com">miryousuf.uok@gmail.com</a>.</p>
       </div>
     </div>
   </div>
@@ -828,7 +871,7 @@
       <a href="mailto:miryousuf.uok@gmail.com">Email</a>
       <a href="https://scholar.google.com/citations?hl=en&amp;user=keHp6E8AAAAJ" target="_blank" rel="noopener">Scholar</a>
       <a href="https://orcid.org/0009-0001-7453-3358" target="_blank" rel="noopener">ORCID</a>
-      <a href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/miruok" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </footer>
@@ -861,6 +904,23 @@
     });
   }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
   document.querySelectorAll('main section[id]').forEach(function(s){spy.observe(s)});
+
+  // Contact form: if Formspree isn't connected yet, fall back to a pre-filled email so the form still works.
+  var cf = document.getElementById('contactForm');
+  if(cf){
+    cf.addEventListener('submit', function(e){
+      if(cf.getAttribute('action').indexOf('YOUR_FORM_ID') === -1) return; // Formspree connected: submit normally
+      e.preventDefault();
+      var f = cf.elements;
+      var subject = 'Portfolio contact from ' + (f.name.value || 'website');
+      var body = 'Name: ' + f.name.value +
+                 '\nEmail: ' + f.email.value +
+                 '\nAffiliation: ' + (f.affiliation.value || '-') +
+                 '\n\n' + f.message.value;
+      window.location.href = 'mailto:miryousuf.uok@gmail.com?subject=' +
+        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
 </script>
 </body>
 </html>
