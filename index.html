@@ -15,7 +15,11 @@
   "@type":"Person",
   "name":"Mir Mohammad Yousuf",
   "jobTitle":"Quantum Software Engineering Researcher and Educator",
-  "affiliation":{"@type":"CollegeOrUniversity","name":"National Institute of Technology Srinagar"},
+  "affiliation":{"@type":"CollegeOrUniversity","name":"National Institute of Technology Srinagar","url":"https://nitsri.ac.in/"},
+  "alumniOf":[
+    {"@type":"CollegeOrUniversity","name":"Central University of Punjab","url":"https://cup.edu.in/"},
+    {"@type":"CollegeOrUniversity","name":"University of Kashmir","url":"https://www.kashmiruniversity.net/"}
+  ],
   "email":"mailto:miryousuf.uok@gmail.com",
   "address":{"@type":"PostalAddress","addressLocality":"Srinagar","addressRegion":"Jammu and Kashmir","addressCountry":"India"},
   "sameAs":[
@@ -60,6 +64,7 @@
   }
 
   *{box-sizing:border-box}
+  [hidden]{display:none !important}
   html{scroll-behavior:smooth}
   body{
     margin:0;
@@ -150,6 +155,11 @@
   p.body{max-width:var(--measure)}
   .lead-sub{color:var(--muted);max-width:var(--measure);margin-top:-14px;margin-bottom:26px}
 
+  /* organisation links */
+  a.org-link{color:inherit;border-bottom:1px dotted var(--tint-line)}
+  a.org-link::after{content:"\2197";font-size:.7em;margin-left:3px;opacity:.55;display:inline-block;border:0}
+  a.org-link:hover{color:var(--teal);border-bottom-color:var(--teal);text-decoration:none}
+
   /* interests */
   .interests{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px;max-width:920px}
   .interests li{list-style:none;padding-left:20px;position:relative;color:var(--ink)}
@@ -190,9 +200,45 @@
   .contribs p{margin:0;font-size:.93rem;color:var(--muted)}
   .band:nth-of-type(even) .contribs > div{background:var(--paper-tint)}
 
+  /* filter chips (timeline + gallery) */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+  .chips button{
+    font-family:var(--sans);font-size:.8rem;font-weight:500;color:var(--slate);
+    background:var(--paper);border:1px solid var(--tint-line);border-radius:20px;
+    padding:5px 13px;cursor:pointer;
+  }
+  .chips button:hover{border-color:var(--teal)}
+  .chips button[aria-pressed="true"]{background:var(--teal-deep);border-color:var(--teal-deep);color:#fff}
+
+  /* unified career timeline */
+  .ctl{list-style:none;margin:0 0 46px;padding:0;position:relative;max-width:900px}
+  .ctl::before{content:"";position:absolute;left:96px;top:8px;bottom:8px;width:2px;background:var(--tint-line)}
+  .ctl li{display:grid;grid-template-columns:80px 1fr;gap:0 34px;position:relative;padding:0 0 16px}
+  .ctl li:last-child{padding-bottom:0}
+  .ctl li::after{
+    content:"";position:absolute;left:91px;top:16px;width:12px;height:12px;border-radius:50%;
+    background:var(--paper);border:2.5px solid var(--teal);
+  }
+  .band:nth-of-type(even) .ctl li::after{background:var(--paper-tint)}
+  .ctl li.edu::after{border-color:var(--slate)}
+  .ctl li.ind::after{border-color:var(--amber)}
+  .ctl .yr{font-family:var(--mono);font-size:.86rem;font-weight:500;color:var(--slate);text-align:right;padding-top:11px}
+  .ctl .card{background:var(--paper);border:1px solid var(--hair);border-radius:10px;padding:12px 16px}
+  .ctl .kind{
+    display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;
+    padding:2px 7px;border-radius:4px;margin-right:8px;vertical-align:2px;
+    background:var(--tint);color:var(--teal-deep);border:1px solid var(--tint-line);
+  }
+  .ctl li.edu .kind{background:#EAF0F6;color:var(--slate);border-color:#CBD9E6}
+  .ctl li.ind .kind{background:#F6EFDD;color:var(--amber);border-color:#E7D6AD}
+  .ctl .t{font-weight:600;color:var(--slate)}
+  .ctl .o{display:block;color:var(--teal-deep);font-size:.92rem;margin-top:2px}
+  .ctl .w{display:block;font-family:var(--mono);font-size:.74rem;color:var(--muted);margin-top:2px}
+
   /* timeline (education + experience) */
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
   .cols h3.colhead{font-size:1.15rem;margin:0 0 18px}
+  h3.colhead{font-size:1.15rem;margin:0 0 18px}
   .tl{border-left:2px solid var(--tint-line);padding-left:22px;margin-left:4px}
   .tl .item{position:relative;padding-bottom:22px}
   .tl .item:last-child{padding-bottom:0}
@@ -215,6 +261,33 @@
 
   .three{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+  .gallery figure{margin:0;background:var(--paper);border:1px solid var(--hair);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+  .gallery .ph{position:relative;display:block;width:100%;aspect-ratio:4/3;padding:0;border:0;background:var(--tint);cursor:zoom-in;overflow:hidden}
+  .gallery .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+  .gallery .ph:hover img{transform:scale(1.03)}
+  .gallery .ph:focus-visible{outline:2px solid var(--teal);outline-offset:-2px}
+  .gallery .ph .empty{position:absolute;inset:0;display:none;place-items:center;align-content:center;gap:6px;color:var(--teal);font-family:var(--mono);font-size:.74rem}
+  .gallery .ph .empty svg{width:30px;height:30px;opacity:.6}
+  .gallery figure.noimg .ph{cursor:default}
+  .gallery figure.noimg .ph img{display:none}
+  .gallery figure.noimg .ph .empty{display:grid}
+  .gallery figcaption{padding:12px 14px 14px;font-size:.88rem}
+  .gallery figcaption b{display:block;color:var(--slate);font-weight:600;line-height:1.35}
+  .gallery figcaption span{display:block;color:var(--muted);font-size:.8rem;margin-top:3px}
+
+  /* lightbox */
+  dialog.lb{border:0;padding:0;background:transparent;max-width:94vw;max-height:94vh;overflow:visible}
+  dialog.lb::backdrop{background:rgba(10,22,25,.9)}
+  .lb img{display:block;max-width:min(1100px,94vw);max-height:80vh;border-radius:8px;margin:0 auto}
+  .lb p{color:#E6EFEE;text-align:center;font-size:.9rem;margin:12px auto 0;max-width:70ch}
+  .lb button{position:fixed;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.25rem;cursor:pointer}
+  .lb button:hover{background:rgba(255,255,255,.26)}
+  .lb .x{top:16px;right:16px}
+  .lb .pv{left:16px;top:50%;transform:translateY(-50%)}
+  .lb .nx{right:16px;top:50%;transform:translateY(-50%)}
 
   /* skills */
   .skill-row{display:grid;grid-template-columns:210px 1fr;gap:18px;padding:12px 0;border-top:1px solid var(--hair);max-width:920px}
@@ -305,11 +378,13 @@
 
   /* print to PDF */
   @media print{
-    .nav,.nav-toggle,.motif,.links,.focus,.form-card,footer{display:none !important}
+    .nav,.nav-toggle,.motif,.links,.focus,.form-card,footer,.chips,#gallery,dialog.lb{display:none !important}
     body{font-size:10.5px;color:#000;background:#fff}
     .band,.hero{padding:12px 0;border:none;background:#fff !important}
     .sec-head::after{background:#ccc}
     a{color:#000;text-decoration:none}
+    a.org-link{border:0}
+    a.org-link::after{content:none}
     details.earlier{border:none;background:#fff}
     details.earlier .chev{display:none}
     details.earlier > summary{padding:6px 0}
@@ -333,6 +408,11 @@
     .interests,.contribs,.cols,.three,.two,.contact-grid,.frow{grid-template-columns:1fr}
     .cols{gap:34px}
     .skill-row{grid-template-columns:1fr;gap:2px}
+    .ctl::before{left:60px}
+    .ctl li{grid-template-columns:44px 1fr;gap:0 34px}
+    .ctl li::after{left:55px}
+    .ctl .yr{font-size:.78rem}
+    .lb .pv,.lb .nx{top:auto;bottom:16px;transform:none}
   }
 
   @media (prefers-reduced-motion:reduce){
@@ -355,6 +435,7 @@
       <a href="#contributions">Contributions</a>
       <a href="#experience">Experience</a>
       <a href="#teaching">Teaching</a>
+      <a href="#gallery">Gallery</a>
       <a href="#awards">Awards</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
@@ -390,7 +471,7 @@
         <p class="lede">
           I work on making quantum software reliable: interpretable defect analysis, self-calibrating
           noise-aware testing evaluated on IBM Quantum hardware, and learning-based error mitigation for
-          quantum machine learning. Senior Research Fellow at NIT Srinagar with over four years of university teaching.
+          quantum machine learning. Senior Research Fellow at <a class="org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">NIT Srinagar</a> with over four years of university teaching.
         </p>
 
         <div class="links">
@@ -408,8 +489,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="3" opacity=".15"/><path d="M8 10v7H5.5v-7H8zM6.7 6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM18.5 17H16v-3.7c0-1-.4-1.6-1.2-1.6-.7 0-1 .5-1.2 1-.1.2-.1.5-.1.7V17h-2.5v-7h2.5v1c.3-.5 1-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.4V17z"/></svg>LinkedIn</a>
           
           <!-- <a href="https://github.com/miruok" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.4 4.6-4.6 4.9.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>GitHub</a>
-        </div> -->
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.4 4.6-4.6 4.9.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>GitHub</a> -->
         </div>
 
         <div class="focus" aria-label="Focus areas">
@@ -433,9 +513,9 @@
   <div class="wrap">
     <div class="sec-head"><h2>About</h2></div>
     <p class="body">
-      Researcher and educator combining doctoral research in Quantum Software Engineering at the National Institute of
-      Technology Srinagar with over four years of university teaching as an Assistant Professor at the University of Kashmir
-      and Lovely Professional University. My research focuses on reliable quantum computing, interpretable defect analysis,
+      Researcher and educator combining doctoral research in Quantum Software Engineering at the <a class="org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">National Institute of
+      Technology Srinagar</a> with over four years of university teaching as an Assistant Professor at the <a class="org-link" href="https://www.kashmiruniversity.net/" target="_blank" rel="noopener">University of Kashmir</a>
+      and <a class="org-link" href="https://www.lpu.in/" target="_blank" rel="noopener">Lovely Professional University</a>. My research focuses on reliable quantum computing, interpretable defect analysis,
       and noise-aware testing, with recent first-author publications in <i>Automated Software Engineering</i> and
       <i>Neurocomputing</i>. Contributions span large-scale empirical studies and self-calibrating testing evaluated on IBM
       Quantum hardware, alongside co-authored work on adaptive error mitigation for quantum machine learning and quantum
@@ -468,7 +548,7 @@
 <section class="band" id="publications">
   <div class="wrap">
     <div class="sec-head"><h2>Recent publications</h2></div>
-    <p class="lead-sub">Recent quantum software engineering work. Earlier publications are listed at the foot of the page.</p>
+    <p class="lead-sub">Recent Contributions. Earlier publications are listed at the foot of the page.</p>
 
     <div class="pub-group">
       <h3>Published and accepted</h3>
@@ -516,8 +596,8 @@
           <span class="pub-meta"><span class="pub-venue">Engineering Applications of Artificial Intelligence</span>.</span>
         </li>
       </ol>
-    </div> 
-  </div> 
+    </div> -->
+  </div>
 </section>
 
 <!-- ===================== CONTRIBUTIONS ===================== -->
@@ -558,25 +638,108 @@
   <div class="wrap">
     <div class="sec-head"><h2>Education &amp; experience</h2></div>
 
+    <!-- Unified career timeline. To add an entry, copy one <li> block; class is edu, acad, or ind. -->
+    <h3 class="colhead">Timeline</h3>
+    <div class="chips" role="group" aria-label="Filter timeline" data-target="careerTimeline">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="edu" aria-pressed="false">Education</button>
+      <button type="button" data-filter="acad" aria-pressed="false">Academic &amp; research</button>
+      <button type="button" data-filter="ind" aria-pressed="false">Industry</button>
+    </div>
+    <ol class="ctl" id="careerTimeline">
+      <li class="edu">
+        <span class="yr">2022</span>
+        <div class="card">
+          <span class="kind">Education</span><span class="t">Ph.D. in Information Technology</span>
+          <span class="o"><a class="org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">National Institute of Technology Srinagar</a></span>
+          <span class="w">Oct 2022 – Present</span>
+        </div>
+      </li>
+      <li class="acad">
+        <span class="yr">2022</span>
+        <div class="card">
+          <span class="kind">Academic</span><span class="t">Research Fellow &amp; Teaching Assistant</span>
+          <span class="o"><a class="org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">Dept. of IT, NIT Srinagar</a></span>
+          <span class="w">Oct 2022 – Present</span>
+        </div>
+      </li>
+      <li class="acad">
+        <span class="yr">2021</span>
+        <div class="card">
+          <span class="kind">Academic</span><span class="t">Assistant Professor</span>
+          <span class="o"><a class="org-link" href="https://www.kashmiruniversity.net/" target="_blank" rel="noopener">University of Kashmir</a></span>
+          <span class="w">Jun 2021 – Oct 2022</span>
+        </div>
+      </li>
+      <li class="acad">
+        <span class="yr">2018</span>
+        <div class="card">
+          <span class="kind">Academic</span><span class="t">Assistant Professor</span>
+          <span class="o"><a class="org-link" href="https://www.lpu.in/" target="_blank" rel="noopener">Lovely Professional University</a></span>
+          <span class="w">Jul 2018 – May 2021</span>
+        </div>
+      </li>
+      <li class="ind">
+        <span class="yr">2017</span>
+        <div class="card">
+          <span class="kind">Industry</span><span class="t">Automation Engineer</span>
+          <span class="o"><a class="org-link" href="https://cup.edu.in/" target="_blank" rel="noopener">Central University of Punjab</a></span>
+          <span class="w">Dec 2017 – May 2018</span>
+        </div>
+      </li>
+      <li class="edu">
+        <span class="yr">2016</span>
+        <div class="card">
+          <span class="kind">Education</span><span class="t">M.Tech. in Computer Science and Technology</span>
+          <span class="o"><a class="org-link" href="https://cup.edu.in/" target="_blank" rel="noopener">Central University of Punjab, Bathinda</a></span>
+          <span class="w">2016 – 2018 · Distinction</span>
+        </div>
+      </li>
+      <li class="ind">
+        <span class="yr">2015</span>
+        <div class="card">
+          <span class="kind">Industry</span><span class="t">QA &amp; Control Engineer</span>
+          <span class="o"><a class="org-link" href="https://www.bqe.com/" target="_blank" rel="noopener">BQE Software Inc.</a></span>
+          <span class="w">Nov 2015 – Mar 2016</span>
+        </div>
+      </li>
+      <li class="ind">
+        <span class="yr">2014</span>
+        <div class="card">
+          <span class="kind">Industry</span><span class="t">Software Developer &amp; Trainer</span>
+          <span class="o">IAC Software Solutions</span>
+          <span class="w">Dec 2014 – Jan 2016</span>
+        </div>
+      </li>
+      <li class="edu">
+        <span class="yr">2011</span>
+        <div class="card">
+          <span class="kind">Education</span><span class="t">B.Tech. in Computer Science and Engineering</span>
+          <span class="o"><a class="org-link" href="https://www.kashmiruniversity.net/" target="_blank" rel="noopener">University of Kashmir, Srinagar</a></span>
+          <span class="w">2011 – 2015 · Distinction</span>
+        </div>
+      </li>
+    </ol>
+
     <div class="cols">
       <div>
         <h3 class="colhead">Education</h3>
         <div class="tl">
           <div class="item">
             <span class="role">Ph.D. in Information Technology</span>
-            <span class="org">National Institute of Technology Srinagar</span>
+            <a class="org org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">National Institute of Technology Srinagar</a>
             <span class="when">Oct 2022 – Present</span>
             <p class="desc"><b>Quantum Software Engineering.</b> Thesis: <i>Quantum Software Engineering: Bridging Theory and Practice</i>. Supervisor: Dr. Shabir Ahmad Sofi. Minimum requirements completed for thesis submission.</p>
           </div>
           <div class="item">
             <span class="role">M.Tech. in Computer Science and Technology</span>
-            <span class="org">Central University of Punjab, Bathinda</span>
+            <a class="org org-link" href="https://cup.edu.in/" target="_blank" rel="noopener">Central University of Punjab, Bathinda</a>
             <span class="when">2016 – 2018</span>
             <p class="desc"><b>Distinction.</b> Thesis: <i>Analysis of the Change of Bugginess and Adaptiveness of Python Software Systems</i>.</p>
           </div>
           <div class="item">
             <span class="role">B.Tech. in Computer Science and Engineering</span>
-            <span class="org">University of Kashmir, Srinagar</span>
+            <a class="org org-link" href="https://www.kashmiruniversity.net/" target="_blank" rel="noopener">University of Kashmir, Srinagar</a>
             <span class="when">2011 – 2015</span>
             <p class="desc"><b>Distinction.</b> Ranked fourth among the university's CSE students.</p>
           </div>
@@ -588,19 +751,19 @@
         <div class="tl">
           <div class="item">
             <span class="role">Research Fellow &amp; Teaching Assistant</span>
-            <span class="org">Dept. of IT, NIT Srinagar</span>
+            <a class="org org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">Dept. of IT, NIT Srinagar</a>
             <span class="when">Oct 2022 – Present</span>
             <p class="desc">Interpretable bug classification evaluated on 12,910 issues from 36 Qiskit repositories and 4,984 annotated cases; cross-ecosystem classification and a longitudinal analysis of 32,296 verified reports from 123 repositories; a self-calibrating noise-aware testing framework evaluated on IBM Quantum hardware.</p>
           </div>
           <div class="item">
             <span class="role">Assistant Professor</span>
-            <span class="org">University of Kashmir</span>
+            <a class="org org-link" href="https://www.kashmiruniversity.net/" target="_blank" rel="noopener">University of Kashmir</a>
             <span class="when">Jun 2021 – Oct 2022</span>
             <p class="desc">Taught programming, algorithms, Python, software engineering, data structures, and research methodology; contributed to curriculum development and student mentoring.</p>
           </div>
           <div class="item">
             <span class="role">Assistant Professor</span>
-            <span class="org">Lovely Professional University</span>
+            <a class="org org-link" href="https://www.lpu.in/" target="_blank" rel="noopener">Lovely Professional University</a>
             <span class="when">Jul 2018 – May 2021</span>
             <p class="desc">Taught software engineering, computer networks, C and Python programming, data structures, and research methods; guided student research projects and theses.</p>
           </div>
@@ -614,7 +777,7 @@
         <div class="tl">
           <div class="item">
             <span class="role">Automation Engineer</span>
-            <span class="org">Central University of Punjab</span>
+            <a class="org org-link" href="https://cup.edu.in/" target="_blank" rel="noopener">Central University of Punjab</a>
             <span class="when">Dec 2017 – May 2018</span>
             <p class="desc">Automated student-management and result modules; PHP/MySQL components and black-box QA.</p>
           </div>
@@ -622,7 +785,7 @@
         <div class="tl">
           <div class="item">
             <span class="role">QA &amp; Control Engineer</span>
-            <span class="org">BQE Software Inc.</span>
+            <a class="org org-link" href="https://www.bqe.com/" target="_blank" rel="noopener">BQE Software Inc.</a>
             <span class="when">Nov 2015 – Mar 2016</span>
             <p class="desc">Tested BillQuick, WebSuite, ArchiOffice, and BQE Online with black-box and white-box techniques across the STLC.</p>
           </div>
@@ -661,9 +824,9 @@
           <h3>Invited talks &amp; engagement</h3>
           <ul class="clean">
             <li><b>Invited Speaker, NIT Srinagar (2026):</b> session on "Quantum AI."</li>
-            <li><b>Invited Expert, AI Summit 2026:</b> Skill Development Centre, SKIMS, Srinagar, pre-summit event on AI in healthcare.</li>
+            <li><b>Invited Expert, AI Summit 2026:</b> Skill Development Centre, <a class="org-link" href="https://www.skims.ac.in/" target="_blank" rel="noopener">SKIMS</a>, Srinagar, pre-summit event on AI in healthcare.</li>
             <li><b>Invited Speaker, National Conference on Patient Safety (2025):</b> "Artificial Intelligence: Safeguarding Patients in the Era of Digital Healthcare," SKICC, Srinagar.</li>
-            <li><b>Expert Resource Person:</b> Python for Artificial Intelligence Workshop, NIT Srinagar, Oct 2025.</li>
+            <li><b>Expert Resource Person:</b> Python for Artificial Intelligence Workshop, <a class="org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">NIT Srinagar</a>, Oct 2025.</li>
             <li><b>Invited Expert, Codevolution 2025:</b> Green Valley Educational Institute, Srinagar.</li>
           </ul>
         </div>
@@ -677,6 +840,78 @@
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<!--
+  To add photos:
+  1. Put the image in a "gallery" folder next to this file (JPG, about 1600 px wide, under 400 KB).
+  2. Copy one <figure> block below, set its src, alt, title and venue line.
+  3. Set the figure class to talk, workshop, or event (controls the filter chips).
+  Entries whose photo is not uploaded yet show a "Photo coming soon" tile instead of a broken image.
+-->
+<section class="band" id="gallery">
+  <div class="wrap">
+    <div class="sec-head"><h2>Gallery</h2></div>
+    <p class="lead-sub">Guest lectures, workshops, and events I have conducted or contributed to. Select a photo to enlarge.</p>
+
+    <div class="chips" role="group" aria-label="Filter gallery" data-target="galleryGrid">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="talk" aria-pressed="false">Talks</button>
+      <button type="button" data-filter="workshop" aria-pressed="false">Workshops</button>
+      <button type="button" data-filter="event" aria-pressed="false">Events</button>
+    </div>
+
+    <div class="gallery" id="galleryGrid">
+      <figure class="talk">
+        <button type="button" class="ph" aria-label="Enlarge photo: Quantum AI session, NIT Srinagar">
+          <img src="gallery/quantum-ai-nit-2026.jpg" alt="Invited session on Quantum AI at NIT Srinagar" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
+        </button>
+        <figcaption><b>Invited session: Quantum AI</b><span><a class="org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">NIT Srinagar</a> · 2026</span></figcaption>
+      </figure>
+
+      <figure class="talk">
+        <button type="button" class="ph" aria-label="Enlarge photo: AI Summit 2026 pre-summit event, SKIMS">
+          <img src="gallery/ai-summit-skims-2026.jpg" alt="AI Summit 2026 pre-summit event on AI in healthcare at SKIMS" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
+        </button>
+        <figcaption><b>AI Summit 2026: AI in healthcare</b><span>Skill Development Centre, <a class="org-link" href="https://www.skims.ac.in/" target="_blank" rel="noopener">SKIMS</a>, Srinagar · 2026</span></figcaption>
+      </figure>
+
+      <figure class="talk">
+        <button type="button" class="ph" aria-label="Enlarge photo: National Conference on Patient Safety, SKICC">
+          <img src="gallery/patient-safety-skicc-2025.jpg" alt="Talk at the National Conference on Patient Safety, SKICC Srinagar" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
+        </button>
+        <figcaption><b>AI: Safeguarding Patients in the Era of Digital Healthcare</b><span>National Conference on Patient Safety, SKICC, Srinagar · 2025</span></figcaption>
+      </figure>
+
+      <figure class="workshop">
+        <button type="button" class="ph" aria-label="Enlarge photo: Python for AI Workshop, NIT Srinagar">
+          <img src="gallery/python-ai-workshop-2025.jpg" alt="Python for Artificial Intelligence Workshop at NIT Srinagar" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
+        </button>
+        <figcaption><b>Python for Artificial Intelligence Workshop</b><span>Expert Resource Person, <a class="org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">NIT Srinagar</a> · Oct 2025</span></figcaption>
+      </figure>
+
+      <figure class="event">
+        <button type="button" class="ph" aria-label="Enlarge photo: Codevolution 2025">
+          <img src="gallery/codevolution-2025.jpg" alt="Codevolution 2025 at Green Valley Educational Institute" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
+        </button>
+        <figcaption><b>Codevolution 2025</b><span>Invited Expert, Green Valley Educational Institute, Srinagar · 2025</span></figcaption>
+      </figure>
+
+      <figure class="event">
+        <button type="button" class="ph" aria-label="Enlarge photo: Smart India Hackathon 2019">
+          <img src="gallery/sih-2019.jpg" alt="Mentoring a team at Smart India Hackathon 2019" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
+        </button>
+        <figcaption><b>Smart India Hackathon 2019</b><span>Team mentor, Ministry of Water Resources problem statement · 2019</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -892,12 +1127,21 @@
   </div>
 </section>
 
+<!-- ===================== LIGHTBOX ===================== -->
+<dialog class="lb" id="lightbox" aria-label="Photo viewer">
+  <img id="lbImg" src="" alt="">
+  <p id="lbCap"></p>
+  <button type="button" class="x" aria-label="Close">&#x2715;</button>
+  <button type="button" class="pv" aria-label="Previous photo">&#x2039;</button>
+  <button type="button" class="nx" aria-label="Next photo">&#x203A;</button>
+</dialog>
+
 <!-- ===================== FOOTER ===================== -->
 <footer>
   <div class="wrap">
     <div>
       <div style="font-family:var(--serif);font-size:1.2rem;color:#fff;margin-bottom:4px">Mir Mohammad Yousuf</div>
-      <p class="note">Quantum Software Engineering researcher and educator. Srinagar, Jammu and Kashmir, India.</p>
+      <p class="note">Quantum Software Engineering researcher and educator. <a href="https://nitsri.ac.in/" target="_blank" rel="noopener">NIT Srinagar</a>, Jammu and Kashmir, India.</p>
     </div>
     <div class="flinks">
       <a href="#top">Back to top</a>
@@ -943,7 +1187,67 @@
       }
     });
   }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
-  document.querySelectorAll('main section[id]').forEach(function(s){spy.observe(s)});
+  document.querySelectorAll('section[id]').forEach(function(s){spy.observe(s)});
+
+  // Filter chips: shared by the career timeline and the gallery
+  document.querySelectorAll('.chips[data-target]').forEach(function(group){
+    var target = document.getElementById(group.getAttribute('data-target'));
+    var btns = group.querySelectorAll('button');
+    if(!target) return;
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        var f = b.getAttribute('data-filter');
+        btns.forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
+        Array.prototype.forEach.call(target.children, function(item){
+          item.hidden = (f !== 'all' && !item.classList.contains(f));
+        });
+      });
+    });
+  });
+
+  // Gallery lightbox: click to enlarge, arrow keys to browse, Esc or backdrop to close
+  (function(){
+    var grid = document.getElementById('galleryGrid');
+    var dlg = document.getElementById('lightbox');
+    if(!grid || !dlg) return;
+    var figs = Array.prototype.slice.call(grid.querySelectorAll('figure'));
+    var lbImg = document.getElementById('lbImg');
+    var lbCap = document.getElementById('lbCap');
+    var idx = 0;
+
+    function pool(){ return figs.filter(function(f){ return !f.hidden && !f.classList.contains('noimg'); }); }
+    function show(i){
+      var p = pool(); if(!p.length) return;
+      idx = (i + p.length) % p.length;
+      var f = p[idx], img = f.querySelector('img');
+      var t = f.querySelector('figcaption b'), s = f.querySelector('figcaption span');
+      lbImg.src = img.getAttribute('data-full') || img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      lbCap.textContent = (t ? t.textContent : '') + (s ? ' · ' + s.textContent : '');
+      var multi = p.length > 1;
+      dlg.querySelector('.pv').hidden = !multi;
+      dlg.querySelector('.nx').hidden = !multi;
+    }
+    function close(){ if(dlg.open){ if(dlg.close) dlg.close(); else dlg.removeAttribute('open'); } }
+
+    figs.forEach(function(f){
+      f.querySelector('.ph').addEventListener('click', function(){
+        if(f.classList.contains('noimg')) return;
+        show(pool().indexOf(f));
+        if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+      });
+    });
+    dlg.querySelector('.x').addEventListener('click', close);
+    dlg.querySelector('.pv').addEventListener('click', function(){ show(idx - 1); });
+    dlg.querySelector('.nx').addEventListener('click', function(){ show(idx + 1); });
+    dlg.addEventListener('click', function(e){ if(e.target === dlg) close(); });
+    document.addEventListener('keydown', function(e){
+      if(!dlg.open) return;
+      if(e.key === 'ArrowLeft') show(idx - 1);
+      else if(e.key === 'ArrowRight') show(idx + 1);
+      else if(e.key === 'Escape') close();
+    });
+  })();
 
   // Contact form: validate, then send to your inbox via Web3Forms. Falls back to a pre-filled
   // email until an access key is added, so the button always does something useful.
