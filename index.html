@@ -200,7 +200,7 @@
   .contribs p{margin:0;font-size:.93rem;color:var(--muted)}
   .band:nth-of-type(even) .contribs > div{background:var(--paper-tint)}
 
-  /* filter chips (timeline + gallery) */
+  /* filter chips (timeline + Gallery) */
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
   .chips button{
     font-family:var(--sans);font-size:.8rem;font-weight:500;color:var(--slate);
@@ -262,21 +262,21 @@
   .three{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:36px}
 
-  /* gallery */
-  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
-  .gallery figure{margin:0;background:var(--paper);border:1px solid var(--hair);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
-  .gallery .ph{position:relative;display:block;width:100%;aspect-ratio:4/3;padding:0;border:0;background:var(--tint);cursor:zoom-in;overflow:hidden}
-  .gallery .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
-  .gallery .ph:hover img{transform:scale(1.03)}
-  .gallery .ph:focus-visible{outline:2px solid var(--teal);outline-offset:-2px}
-  .gallery .ph .empty{position:absolute;inset:0;display:none;place-items:center;align-content:center;gap:6px;color:var(--teal);font-family:var(--mono);font-size:.74rem}
-  .gallery .ph .empty svg{width:30px;height:30px;opacity:.6}
-  .gallery figure.noimg .ph{cursor:default}
-  .gallery figure.noimg .ph img{display:none}
-  .gallery figure.noimg .ph .empty{display:grid}
-  .gallery figcaption{padding:12px 14px 14px;font-size:.88rem}
-  .gallery figcaption b{display:block;color:var(--slate);font-weight:600;line-height:1.35}
-  .gallery figcaption span{display:block;color:var(--muted);font-size:.8rem;margin-top:3px}
+  /* Gallery */
+  .Gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+  .Gallery figure{margin:0;background:var(--paper);border:1px solid var(--hair);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+  .Gallery .ph{position:relative;display:block;width:100%;aspect-ratio:4/3;padding:0;border:0;background:var(--tint);cursor:zoom-in;overflow:hidden}
+  .Gallery .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+  .Gallery .ph:hover img{transform:scale(1.03)}
+  .Gallery .ph:focus-visible{outline:2px solid var(--teal);outline-offset:-2px}
+  .Gallery .ph .empty{position:absolute;inset:0;display:none;place-items:center;align-content:center;gap:6px;color:var(--teal);font-family:var(--mono);font-size:.74rem}
+  .Gallery .ph .empty svg{width:30px;height:30px;opacity:.6}
+  .Gallery figure.noimg .ph{cursor:default}
+  .Gallery figure.noimg .ph img{display:none}
+  .Gallery figure.noimg .ph .empty{display:grid}
+  .Gallery figcaption{padding:12px 14px 14px;font-size:.88rem}
+  .Gallery figcaption b{display:block;color:var(--slate);font-weight:600;line-height:1.35}
+  .Gallery figcaption span{display:block;color:var(--muted);font-size:.8rem;margin-top:3px}
 
   /* lightbox */
   dialog.lb{border:0;padding:0;background:transparent;max-width:94vw;max-height:94vh;overflow:visible}
@@ -378,7 +378,7 @@
 
   /* print to PDF */
   @media print{
-    .nav,.nav-toggle,.motif,.links,.focus,.form-card,footer,.chips,#gallery,dialog.lb{display:none !important}
+    .nav,.nav-toggle,.motif,.links,.focus,.form-card,footer,.chips,#Gallery,dialog.lb{display:none !important}
     body{font-size:10.5px;color:#000;background:#fff}
     .band,.hero{padding:12px 0;border:none;background:#fff !important}
     .sec-head::after{background:#ccc}
@@ -435,7 +435,7 @@
       <a href="#contributions">Contributions</a>
       <a href="#experience">Experience</a>
       <a href="#teaching">Teaching</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#Gallery">Gallery</a>
       <a href="#awards">Awards</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
@@ -844,30 +844,30 @@
   </div>
 </section>
 
-<!-- ===================== GALLERY ===================== -->
+<!-- ===================== Gallery ===================== -->
 <!--
   To add photos:
-  1. Put the image in a "gallery" folder next to this file (JPG, about 1600 px wide, under 400 KB).
+  1. Put the image in a "Gallery" folder next to this file (JPG, about 1600 px wide, under 400 KB).
   2. Copy one <figure> block below, set its src, alt, title and venue line.
   3. Set the figure class to talk, workshop, or event (controls the filter chips).
   Entries whose photo is not uploaded yet show a "Photo coming soon" tile instead of a broken image.
 -->
-<section class="band" id="gallery">
+<section class="band" id="Gallery">
   <div class="wrap">
     <div class="sec-head"><h2>Gallery</h2></div>
     <p class="lead-sub">Guest lectures, workshops, and events I have conducted or contributed to. Select a photo to enlarge.</p>
 
-    <div class="chips" role="group" aria-label="Filter gallery" data-target="galleryGrid">
+    <div class="chips" role="group" aria-label="Filter Gallery" data-target="GalleryGrid">
       <button type="button" data-filter="all" aria-pressed="true">All</button>
       <button type="button" data-filter="talk" aria-pressed="false">Talks</button>
       <button type="button" data-filter="workshop" aria-pressed="false">Workshops</button>
       <button type="button" data-filter="event" aria-pressed="false">Events</button>
     </div>
 
-    <div class="gallery" id="galleryGrid">
+    <div class="Gallery" id="GalleryGrid">
       <figure class="talk">
         <button type="button" class="ph" aria-label="Enlarge photo: Quantum AI session, NIT Srinagar">
-          <img src="gallery/quantum-ai-nit-2026.jpg" alt="Invited session on Quantum AI at NIT Srinagar" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <img src="Gallery/quantum-ai-nit-2026.jpg" alt="Invited session on Quantum AI at NIT Srinagar" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
           <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
         </button>
         <figcaption><b>Invited session: Quantum AI</b><span><a class="org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">NIT Srinagar</a> · 2026</span></figcaption>
@@ -875,7 +875,7 @@
 
       <figure class="talk">
         <button type="button" class="ph" aria-label="Enlarge photo: AI Summit 2026 pre-summit event, SKIMS">
-          <img src="gallery/ai-summit-skims-2026.jpg" alt="AI Summit 2026 pre-summit event on AI in healthcare at SKIMS" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <img src="Gallery/ai-summit-skims-2026.jpg" alt="AI Summit 2026 pre-summit event on AI in healthcare at SKIMS" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
           <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
         </button>
         <figcaption><b>AI Summit 2026: AI in healthcare</b><span>Skill Development Centre, <a class="org-link" href="https://www.skims.ac.in/" target="_blank" rel="noopener">SKIMS</a>, Srinagar · 2026</span></figcaption>
@@ -883,7 +883,7 @@
 
       <figure class="talk">
         <button type="button" class="ph" aria-label="Enlarge photo: National Conference on Patient Safety, SKICC">
-          <img src="gallery/patient-safety-skicc-2025.jpg" alt="Talk at the National Conference on Patient Safety, SKICC Srinagar" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <img src="Gallery/patient-safety-skicc-2025.jpg" alt="Talk at the National Conference on Patient Safety, SKICC Srinagar" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
           <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
         </button>
         <figcaption><b>AI: Safeguarding Patients in the Era of Digital Healthcare</b><span>National Conference on Patient Safety, SKICC, Srinagar · 2025</span></figcaption>
@@ -891,7 +891,7 @@
 
       <figure class="workshop">
         <button type="button" class="ph" aria-label="Enlarge photo: Python for AI Workshop, NIT Srinagar">
-          <img src="gallery/python-ai-workshop-2025.jpg" alt="Python for Artificial Intelligence Workshop at NIT Srinagar" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <img src="Gallery/python-ai-workshop-2025.jpg" alt="Python for Artificial Intelligence Workshop at NIT Srinagar" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
           <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
         </button>
         <figcaption><b>Python for Artificial Intelligence Workshop</b><span>Expert Resource Person, <a class="org-link" href="https://nitsri.ac.in/" target="_blank" rel="noopener">NIT Srinagar</a> · Oct 2025</span></figcaption>
@@ -899,7 +899,7 @@
 
       <figure class="event">
         <button type="button" class="ph" aria-label="Enlarge photo: Codevolution 2025">
-          <img src="gallery/codevolution-2025.jpg" alt="Codevolution 2025 at Green Valley Educational Institute" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <img src="Gallery/codevolution-2025.jpg" alt="Codevolution 2025 at Green Valley Educational Institute" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
           <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
         </button>
         <figcaption><b>Codevolution 2025</b><span>Invited Expert, Green Valley Educational Institute, Srinagar · 2025</span></figcaption>
@@ -907,7 +907,7 @@
 
       <figure class="event">
         <button type="button" class="ph" aria-label="Enlarge photo: Smart India Hackathon 2019">
-          <img src="gallery/sih-2019.jpg" alt="Mentoring a team at Smart India Hackathon 2019" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+          <img src="Gallery/sih-2019.jpg" alt="Mentoring a team at Smart India Hackathon 2019" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
           <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Photo coming soon</span>
         </button>
         <figcaption><b>Smart India Hackathon 2019</b><span>Team mentor, Ministry of Water Resources problem statement · 2019</span></figcaption>
@@ -1189,7 +1189,7 @@
   }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
   document.querySelectorAll('section[id]').forEach(function(s){spy.observe(s)});
 
-  // Filter chips: shared by the career timeline and the gallery
+  // Filter chips: shared by the career timeline and the Gallery
   document.querySelectorAll('.chips[data-target]').forEach(function(group){
     var target = document.getElementById(group.getAttribute('data-target'));
     var btns = group.querySelectorAll('button');
@@ -1207,7 +1207,7 @@
 
   // Gallery lightbox: click to enlarge, arrow keys to browse, Esc or backdrop to close
   (function(){
-    var grid = document.getElementById('galleryGrid');
+    var grid = document.getElementById('GalleryGrid');
     var dlg = document.getElementById('lightbox');
     if(!grid || !dlg) return;
     var figs = Array.prototype.slice.call(grid.querySelectorAll('figure'));
